@@ -1,0 +1,35 @@
+html {
+  height: 100%;
+  width: 100%
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+main {
+  display: flex;
+  height: 100%;
+}
+
+#banner {
+  width: 35%;
+}
+
+header {
+  background-color: #404041;
+  display: flex;
+  justify-content: center;
+}
+.main-column {
+  width: 50%;
+  height: 90vh;
+}
+#column-left {
+  border-right: 1px solid #adadad;
+  background-color: #f7f7f7;
+}
+#column-right {
+  background-color: #d0d2d3;
+}
