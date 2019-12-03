@@ -1,6 +1,9 @@
+/* whole page items */
 html {
   height: 100%;
-  width: 100%
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -13,23 +16,53 @@ main {
   height: 100%;
 }
 
-#banner {
+label{
+  display: block;
+}
+
+button{
+
+}
+
+/* Logo / top page */
+.banner {
   width: 35%;
 }
 
 header {
-  background-color: #404041;
   display: flex;
   justify-content: center;
+  background-color: #404041;
 }
-.main-column {
+
+/* Left and right columns of page */
+.column-left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-right: 1px solid #adadad;
+  background-color: #f7f7f7;
   width: 50%;
   height: 90vh;
 }
-#column-left {
-  border-right: 1px solid #adadad;
-  background-color: #f7f7f7;
-}
-#column-right {
+
+.column-right {
   background-color: #d0d2d3;
+  width: 50%;
+  height: 90vh;
+}
+
+
+/* left column items */
+.set-range-flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-box {
+  border: 1px solid #d1d2d4;
+  background-color: white;
+  width: 93%;
+  margin-top: 10px;
+  padding: 10px;
 }
