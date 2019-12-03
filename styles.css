@@ -66,9 +66,18 @@ header {
 
 
 /* left column items */
-.set-range-flex {
+.label-input-flex {
   display: flex;
   justify-content: space-between;
+}
+
+.input-guess {
+  position: relative;
+  right: 84px;
+}
+
+.input-name {
+  width: 43%;
 }
 
 .left-box {
