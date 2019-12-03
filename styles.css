@@ -55,17 +55,22 @@ header {
   border-right: 1px solid #adadad;
   background-color: #f7f7f7;
   width: 50%;
-  height: 90vh;
+  height: 100vh;
 }
 
 .column-right {
   background-color: #d0d2d3;
   width: 50%;
-  height: 90vh;
+  height: 100vh;
 }
 
 
 /* left column items */
+.update-button {
+  width: 20%;
+  margin-top: 18px;
+}
+
 .label-input-flex {
   display: flex;
   justify-content: space-between;
@@ -87,8 +92,7 @@ header {
   margin-top: 10px;
   padding: 10px;
 }
-
-.update-button{
-  width: 20%;
-  margin-top: 18px;
+.challenger-flex {
+  display: flex;
+  justify-content: space-around;
 }
