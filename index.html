@@ -1,80 +1,81 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Number Guesser</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap"
-          rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <img  class="banner" src="assets/num_guesser_logo.png" alt="logo">
-    </header>
-    <main>
-      <section class="main-column column-left">
-        <div class="set-range left-box">
-          <h2>Set Range</h2>
-          <div class="label-input-flex">
-            <div class="label-input">
-              <label for="min-range">Min Range</label>
-              <input type="text" name="min-range">
-            </div>
-            <div class="label-input">
-              <label for="max-range">Max Range</label>
-              <input type="text" name="max-range">
-            </div>
-            <button class="update-button" type="button" name="update">Update</button>
-          </div>
-        </div>
-        <div class="current-range left-box">
-          <p>The Current Range is 1 to 100</p>
-          <h2>Challenger 1</h2>
-          <div class="label-input-flex">
-            <div class="input-name">
-              <label for="name">Name</label>
-              <input type="text" name="min-range">
-            </div>
-            <div class="input-guess">
-              <label for="guess">Guess</label>
-              <input type="text" name="max-range">
-            </div>
-          </div>
-          <h2>Challenger 2</h2>
-          <div class="label-input-flex">
-            <div class="input-name">
-              <label for="name">Name</label>
-              <input type="text" name="min-range">
-            </div>
-            <div class="input-guess">
-              <label for="guess">Guess</label>
-              <input type="text" name="max-range">
-            </div>
-          </div>
-        </div>
-        <div class="latest-guess left-box">
-          <div class="left-c-box"
-              <h2>Latest Guess</h2>
-            <div class="challenger-flex">
-              <div class="challenger-guess">
-                <h3>Challenger 1 Name</h3>
-                <p>current guess</p>
-                <p>no guess yet!</p>
-              </div>
-                <div class="challenger-guess">
-                  <h3>Challenger 2 Name</h3>
-                  <p>current guess</p>
-                  <p>no guess yet!</p>
-                </div>
-              </div>
-            </div>
-      </section>
 
-      <div class="main-column column-right">
-        2
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Number Guesser</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img class="banner" src="assets/num_guesser_logo.png" alt="logo">
+  </header>
+  <main>
+    <section class="main-column column-left">
+      <div class="set-range left-box">
+        <h2>Set Range</h2>
+        <div class="label-input-flex">
+          <div class="label-input">
+            <label for="min-range">Min Range</label>
+            <input type="text" name="min-range">
+          </div>
+          <div class="label-input">
+            <label for="max-range">Max Range</label>
+            <input type="text" name="max-range">
+          </div>
+          <button class="update-button" type="button" name="update">Update</button>
+        </div>
       </div>
-    </main>
-  </body>
+      <div class="current-range left-box">
+        <p>The Current Range is 1 to 100</p>
+        <h2>Challenger 1</h2>
+        <div class="label-input-flex">
+          <div class="input-name">
+            <label for="name">Name</label>
+            <input type="text" name="min-range">
+          </div>
+          <div class="input-guess">
+            <label for="guess">Guess</label>
+            <input type="text" name="max-range">
+          </div>
+        </div>
+        <h2>Challenger 2</h2>
+        <div class="label-input-flex">
+          <div class="input-name">
+            <label for="name">Name</label>
+            <input type="text" name="min-range">
+          </div>
+          <div class="input-guess">
+            <label for="guess">Guess</label>
+            <input type="text" name="max-range">
+          </div>
+        </div>
+      </div>
+      <div class="latest-guess left-box">
+        <h2>Latest Guess</h2>
+        <div class="challenger-flex">
+          <div class="challenger-guess">
+            <h3>Challenger 1 Name</h3>
+            <p>current guess</p>
+            <p>no guess yet!</p>
+          </div>
+          <div class="challenger-guess">
+            <h3>Challenger 2 Name</h3>
+            <p>current guess</p>
+            <p>no guess yet!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="main-column column-right">
+      2
+    </div>
+  </main>
+</body>
+
 </html>
