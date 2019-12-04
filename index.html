@@ -11,11 +11,11 @@
   </head>
   <body>
     <header>
-      <p><span>Number</span> Guesser</p>
+      <p class="logo"><span>Number</span> Guesser</p>
       <div class="uce-flex">
-        <hr>
+        <hr class="logo-line">
         <p class="uce">Ultimate Challenger Edition</p>
-        <hr>
+        <hr class="logo-line">
       </div>
     </header>
     <main>
@@ -44,7 +44,7 @@
             </div>
             <div class="input-guess">
               <label for="guess">Guess</label>
-              <!-- <input type="text" name="max-range">
+              <input type="text" name="max-range">
             </div>
           </div>
           <h2>Challenger 2</h2>
@@ -75,7 +75,6 @@
           </div>
         </div>
       </section>
-
       <div class="main-column column-right">
         <article class="challenge-outcome">
           <div class="co-names">
@@ -83,13 +82,17 @@
             <p class="vs">vs.</p>
             <h3>CHALLENGER 2 NAME</h3>
           </div>
-          <hr class="outomce-hr">
-          <p class="c-name">CHALLENGER 2 NAME</p>
-          <p>WINNER</p>
-          <hr class="outcome-hr">
-          <p>23 Guesses</p>
-          <p>1 Minute 35 Seconds</p>
-          <button type="button" name="button">X</button>
+          <div class="mid-challenge-flex">
+            <hr class="challenge-line">
+            <p class="c-name">CHALLENGER 2 NAME</p>
+            <p>WINNER</p>
+            <hr class="challenge-line">
+          </div>
+          <div class="outcome-bottom">
+            <p>23 Guesses</p>
+            <p>1 Minute 35 Seconds</p>
+            <button type="button" name="button">X</button>
+          </div>
         </article>
       </div>
     </main>
