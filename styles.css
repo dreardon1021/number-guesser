@@ -27,14 +27,38 @@ button {
   color: #ffffff;
   font-size: 22px;
   font-weight: bold;
+  border: 1px solid #d1d2d4;
+  height: 37px;
+  margin-top: 20px;
 }
 
 input {
   width: 150%;
-  height: 30px;
+  height: 35px;
+  margin-top: 2px;
 }
 
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 19px;
+  width: 100%;
+}
 
+h3 {
+  margin: 0;
+  font-size: 17px;
+  color: #727279;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+em {
+  font-weight: bold;
+  text-decoration: underline;
+  font-style: normal;
+}
 
 /* Logo / top page */
 .banner {
@@ -64,16 +88,16 @@ header {
   height: 100vh;
 }
 
-
 /* left column items */
 .update-button {
-  width: 20%;
-  margin-top: 18px;
+  width: 22%;
+  margin-top: 22px;
 }
 
 .label-input-flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .input-guess {
@@ -92,7 +116,34 @@ header {
   margin-top: 10px;
   padding: 10px;
 }
+
 .challenger-flex {
   display: flex;
   justify-content: space-around;
+}
+
+.challenger-guess {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 50%;
+}
+
+.buttons-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit-reset-clear-btns {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.no-guesses {
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.set-range {
+  padding-bottom: 25px;
 }
