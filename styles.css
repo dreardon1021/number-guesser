@@ -35,16 +35,40 @@ input {
 }
 
 
-
 /* Logo / top page */
-.banner {
-  width: 35%;
-}
-
 header {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #404041;
+}
+
+p{
+  font-size: 48px;
+  margin: 0;
+  color: #dd1972;
+}
+
+hr {
+  margin: 0px 10px 0px 10px;
+  width: 200px;
+  color: white;
+}
+
+.uce {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.uce-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+span {
+  font-weight: bold;
 }
 
 /* Left and right columns of page */
@@ -92,7 +116,29 @@ header {
   margin-top: 10px;
   padding: 10px;
 }
+
 .challenger-flex {
   display: flex;
   justify-content: space-around;
+}
+
+/* Right Column Boxes */
+.outcome-hr{
+   width: 80%;
+   color: #d1d2d4;
+}
+article {
+  width: 40%;
+  border: 2px solid black;
+}
+
+.co-names {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.vs{
+  margin: 0px 5px 0px 15px;
+  font-size: 10px;
 }

@@ -9,10 +9,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap"
           rel="stylesheet">
   </head>
-  
   <body>
     <header>
-      <img  class="banner" src="assets/num_guesser_logo.png" alt="logo">
+      <p><span>Number</span> Guesser</p>
+      <div class="uce-flex">
+        <hr>
+        <p class="uce">Ultimate Challenger Edition</p>
+        <hr>
+      </div>
     </header>
     <main>
       <section class="main-column column-left">
@@ -40,7 +44,7 @@
             </div>
             <div class="input-guess">
               <label for="guess">Guess</label>
-              <input type="text" name="max-range">
+              <!-- <input type="text" name="max-range">
             </div>
           </div>
           <h2>Challenger 2</h2>
@@ -73,7 +77,20 @@
       </section>
 
       <div class="main-column column-right">
-        2
+        <article class="challenge-outcome">
+          <div class="co-names">
+            <h3>CHALLENGER 1 NAME</h3>
+            <p class="vs">vs.</p>
+            <h3>CHALLENGER 2 NAME</h3>
+          </div>
+          <hr class="outomce-hr">
+          <p class="c-name">CHALLENGER 2 NAME</p>
+          <p>WINNER</p>
+          <hr class="outcome-hr">
+          <p>23 Guesses</p>
+          <p>1 Minute 35 Seconds</p>
+          <button type="button" name="button">X</button>
+        </article>
       </div>
     </main>
   </body>
