@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Number Guesser</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <img  class="banner" src="assets/num_guesser_logo.png" alt="logo">
+      <img class="banner" src="assets/num_guesser_logo.png" alt="logo">
     </header>
     <main>
       <section class="main-column column-left">
@@ -26,11 +25,11 @@
               <label for="max-range">Max Range</label>
               <input type="text" name="max-range">
             </div>
-            <button class="update-button" type="button" name="update">Update</button>
+            <button class="update-button" type="button" name="update">UPDATE</button>
           </div>
         </div>
         <div class="current-range left-box">
-          <p>The Current Range is 1 to 100</p>
+          <p>The Current Range is <em class="range-min">1</em> to <em class="range-max">100</em></p>
           <h2>Challenger 1</h2>
           <div class="label-input-flex">
             <div class="input-name">
@@ -53,25 +52,28 @@
               <input type="text" name="max-range">
             </div>
           </div>
+          <div class="buttons-flex">
+            <button class="submit-reset-clear-btns">SUBMIT GUESS</button>
+            <button class="submit-reset-clear-btns">RESET GAME</button>
+            <button class="submit-reset-clear-btns">CLEAR FORM</button>
+          </div>
         </div>
         <div class="latest-guess left-box">
-          <div class="left-c-box"
-              <h2>Latest Guess</h2>
-            <div class="challenger-flex">
-              <div class="challenger-guess">
-                <h3>Challenger 1 Name</h3>
-                <p>current guess</p>
-                <p>no guess yet!</p>
-              </div>
-                <div class="challenger-guess">
-                  <h3>Challenger 2 Name</h3>
-                  <p>current guess</p>
-                  <p>no guess yet!</p>
-                </div>
-              </div>
+          <h2>Latest Guess</h2>
+          <div class="challenger-flex">
+            <div class="challenger-guess">
+              <h3>Challenger 1 Name</h3>
+              <p>current guess</p>
+              <p class="no-guesses">no guesses yet!</p>
             </div>
+            <div class="challenger-guess">
+              <h3>Challenger 2 Name</h3>
+              <p>current guess</p>
+              <p class="no-guesses">no guesses yet!</p>
+            </div>
+          </div>
+        </div>
       </section>
-
       <div class="main-column column-right">
         2
       </div>
