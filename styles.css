@@ -123,10 +123,12 @@ span {
 }
 
 /* Right Column Boxes */
+
 .outcome-hr{
    width: 80%;
    color: #d1d2d4;
 }
+
 .challenge-outcome {
 width: 80%;
 margin: 10px 10px 10px 70px;
@@ -159,4 +161,29 @@ font-size: 18px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.close-button {
+    border-radius: 50%;
+    background-color: #7F7F7F;
+    color: #CECFD1;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 9px;
+}
+
+p.c-name {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 10px 0px 0px;
+}
+
+.c-text {
+  color: #7F7F7F;
+}
+
+.winner {
+  font-size: 40px;
+  margin: 5px 0px 0px 0px;
 }
