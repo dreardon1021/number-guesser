@@ -60,7 +60,8 @@ header {
   align-items: center;
   flex-direction: column;
   background-color: #404041;
-  
+}
+
 em {
   font-weight: bold;
   text-decoration: underline;
@@ -166,7 +167,7 @@ background-color: white;
   justify-content: center;
 }
 
-.vs{
+.vs {
 margin: 17px 10px 0px 15px;
 font-size: 18px;
 }
@@ -214,6 +215,8 @@ p.c-name {
 .winner {
   font-size: 40px;
   margin: 5px 0px 0px 0px;
+
+}
 
 .challenger-guess {
   display: flex;
