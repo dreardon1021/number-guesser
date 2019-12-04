@@ -51,12 +51,12 @@ header {
 
 .logo-line {
   margin: -27px 10px 0px 10px;
-  width: 76px;
+  width: 85px;
   color: white;
 }
 
 .uce {
-  font-size: 22px;
+  font-size: 19px;
   margin: -9px 5px 20px 5px;
   color: white;
 }
@@ -164,13 +164,17 @@ font-size: 18px;
 }
 
 .close-button {
-    border-radius: 50%;
-    background-color: #7F7F7F;
-    color: #CECFD1;
-    width: 35px;
-    height: 35px;
-    position: relative;
-    top: 9px;
+  border-radius: 50%;
+  background-color: #7F7F7F;
+  color: #CECFD1;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 9px;
+  background-image: url(assets/icons8-multiply-48.png);
+  background-size: 28px;
+  background-repeat: no-repeat;
+  border: 1px solid #7F7F7F;
 }
 
 p.c-name {
