@@ -1,13 +1,12 @@
-var inputFields = document.querySelectorAll('.middle-left-input');
-var submitButton = document.querySelector('.submit-button');
 
-
-for(var i = 0; i < inputFields.length; i++){
-inputFields[i].addEventListener('keyup', enableSubmitButton)
+for(var i = 0; i < document.querySelectorAll('.middle-left-input').length; i++){
+document.querySelectorAll('.middle-left-input')[i].addEventListener('keyup', enableSubmitButton)
 };
 
 
 function enableSubmitButton(){
+  var submitButton = document.querySelector('.submit-button');
+  var inputFields = document.querySelectorAll('.middle-left-input');
     for(var i = 0; i < inputFields.length; i++){
     if (inputFields[i].value > 0){
        submitButton.disabled = true;
@@ -16,51 +15,3 @@ function enableSubmitButton(){
     };
   };
 };
-
-
-
-
-
-
-
-
-
-
-// funtion activateDeactivate() {
-
-
-//   };
-//   if (nameGuessInput.length < 1){
-//     submitButton.setAttribute = ('disabled', 'disabled');
-//     console.log(disable)
-//   } else {
-//     submitButton.removeAttribute = ('disabled');
-//     console.log(enable)
-//   };
-// };
-
-
-
-
-
-// submitButton.addEventListener('click', poof)
-
-// function poof(){
-//   for(var i = 0; i < nameGuessInput.length; i++){
-//   nameGuessInput[i].style.display = 'none'
-//   };
-// };
-
-
-// submitButton.addEventListener('change', enableSubmit)
-
-
-// function enableSubmit(){
-// if (nameGuessInput.length < 1){
-//   submitButton.setAttribute = ('disabled', 'disabled');
-//   console.log(disable)
-// } else {
-//   submitButton.removeAttribute = ('disabled');
-//   console.log(enable)
-//    };
-// };
