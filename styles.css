@@ -248,3 +248,7 @@ p.c-name {
 .set-range {
   padding-bottom: 25px;
 }
+
+.enable-button {
+  background-color: #6e6e6e;
+}
