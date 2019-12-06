@@ -34,31 +34,33 @@
           </div>
         </div>
         <div class="current-range left-box">
+          <form>
           <p>The Current Range is <em class="range-min">1</em> to <em class="range-max">100</em></p>
           <h2>Challenger 1</h2>
           <div class="label-input-flex">
             <div class="input-name">
               <label for="name">Name</label>
-              <input class="middle-left-input" type="text" name="input-name-1">
+              <input required class="middle-left-input" type="text" name="input-name-1">
             </div>
             <div class="input-guess">
               <label for="guess">Guess</label>
-              <input class="middle-left-input" type="text" name="input-guess-1">
+              <input required class="middle-left-input" type="text" name="input-guess-1">
             </div>
           </div>
           <h2>Challenger 2</h2>
           <div class="label-input-flex">
             <div class="input-name">
               <label for="name">Name</label>
-              <input class="middle-left-input" type="text" name="input-name-2">
+              <input required class="middle-left-input" type="text" name="input-name-2">
             </div>
             <div class="input-guess">
               <label for="guess">Guess</label>
-              <input class="middle-left-input" type="text" name="input-name-3">
+              <input required class="middle-left-input" type="text" name="input-name-3">
             </div>
           </div>
+        </form>
           <div class="buttons-flex">
-            <button disabled class="submit-button submit-reset-clear-btns">SUBMIT GUESS</button>
+            <button disabled type="submit" class="submit-button submit-reset-clear-btns">SUBMIT GUESS</button>
             <button class="submit-reset-clear-btns">RESET GAME</button>
             <button class="submit-reset-clear-btns">CLEAR FORM</button>
           </div>

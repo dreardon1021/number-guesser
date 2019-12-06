@@ -24,7 +24,7 @@ function enableSubmitButton(){
     console.log('inputFields:', inputFields);
     console.log('inputFields[i]:', inputFields[i]);
     console.log('inputFields[i].value:', inputFields[i].value);
-    if (inputFields[i].value < 5){
+    if (inputFields[i].value.length < 1){
        console.log('inputFields[i].value:', inputFields[i].value);
        submitButton.disabled = true;
      } else {
