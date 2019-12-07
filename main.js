@@ -1,4 +1,5 @@
 document.querySelector('.clear-form-button').addEventListener('click', clearFormInput);
+document.querySelector('.submit-form-button').addEventListener('click', addChallengers);
 document.querySelector('.submit-form-button').addEventListener('click', clearGuessInput);
 document.querySelector('form').addEventListener('keyup', enableSubmit);
 document.querySelector('form').addEventListener('keyup', enableClearButton);
@@ -15,19 +16,6 @@ function clearFormInput() {
   clearFormButton.setAttribute('disabled', "");
   clearFormButton.classList.remove('enable-button');
 };
-
-function clearGuessInput() {
-  var guessInputFields = document.querySelectorAll('.guess-input-field');
-  var submitButton = document.querySelector('.submit-form-button');
-  var clearFormButton = document.querySelector('.clear-form-button')
-  var resetButton = document.querySelector('.reset-game')
-  for (var i=0; i < guessInputFields.length; i++){
-    guessInputFields[i].value = null;
-  };
-};
-
-
-document.querySelector('.submit-form-button').addEventListener('click', addChallengers)
 
 function addChallengers(){
   console.log('addNames')
@@ -48,6 +36,16 @@ function addChallengers(){
   guess1.innerText = guess1Input;
   guess2.innerText = guess2Input;
 };
+
+
+function clearGuessInput() {
+  var guessInputFields = document.querySelectorAll('.guess-input-field');
+  var submitButton = document.querySelector('.submit-form-button');
+  var clearFormButton = document.querySelector('.clear-form-button')
+  var resetButton = document.querySelector('.reset-game')
+  for (var i=0; i < guessInputFields.length; i++){
+    guessInputFields[i].value = null;
+  };
   submitButton.setAttribute('disabled', "");
   submitButton.classList.remove('enable-button');
 };

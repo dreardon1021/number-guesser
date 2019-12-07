@@ -38,6 +38,13 @@ input {
   margin-top: 2px;
 }
 
+h1 {
+  font-size: 70px;
+  font-weight: bolder;
+  margin-top: -13px;
+  color: #dd1972;
+}
+
 h2 {
   margin: 0 0 10px 0;
   font-size: 19px;
@@ -142,9 +149,17 @@ span {
   padding: 10px;
 }
 
+.latest-guess-left-box {
+  height: 240px;
+}
+
 .challenger-flex {
   display: flex;
   justify-content: space-around;
+}
+
+.current-guess {
+  margin: 0;
 }
 
 /* Right Column Boxes */
@@ -225,9 +240,10 @@ p.c-name {
 
 .challenger-guess {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   width: 50%;
+  height: 145px;
 }
 
 .buttons-flex {
@@ -242,7 +258,8 @@ p.c-name {
 
 .no-guesses {
   font-size: 20px;
-  margin-top: 50px;
+  position: absolute;
+  bottom: -113px;
 }
 
 .set-range {
