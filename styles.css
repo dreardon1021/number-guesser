@@ -165,7 +165,9 @@ span {
 .challenger-vertical-line {
 display: inline-block;
   border: 1px solid #d1d2d4;
-  height: 152px;
+  height: 100%-10px;
+  margin-top: 5px;
+  maring-bottom: 5px;
 }
 
 .latest-guess-h2 {
