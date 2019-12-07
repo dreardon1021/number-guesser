@@ -48,7 +48,7 @@ h1 {
 h2 {
   margin: 0 0 10px 0;
   font-size: 19px;
-  width: 100%;
+  width: 45%;
 }
 
 h3 {
@@ -162,6 +162,21 @@ span {
   margin: 0;
 }
 
+.challenger-vertical-line {
+display: inline-block;
+  border: 1px solid #d1d2d4;
+  height: calc(100%-10px);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.latest-guess-h2 {
+  align-self: flex-start;
+}
+
+.challenger-2-name {
+  margin-top: 36px;
+}
 /* Right Column Boxes */
 
 .outcome-hr {
@@ -243,7 +258,8 @@ p.c-name {
   flex-flow: column nowrap;
   align-items: center;
   width: 50%;
-  height: 145px;
+  height: 177px;
+  position: relative;
 }
 
 .buttons-flex {
@@ -256,10 +272,12 @@ p.c-name {
   padding-right: 25px;
 }
 
-.no-guesses {
+.no-guesses1,
+.no-guesses2 {
   font-size: 20px;
   position: absolute;
-  bottom: -113px;
+  margin: 0px;
+  bottom: 2px;
 }
 
 .set-range {
