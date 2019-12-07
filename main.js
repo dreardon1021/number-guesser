@@ -74,22 +74,27 @@ function enableClearButton() {
     }
   };
 
-// Feature guess Messages
+// Feature guess Messages print for users
+
   var currentNum = 56
   var guessMessage1 = document.querySelector('.no-guesses1')
+  document.querySelector('.submit-form-button').addEventListener('click', user1Guess)
 
-  function user1Guess(challengerGuess){
+  function user1Guess(){
+    console.log(user1Guess);
     var guessInput1Field = document.querySelector('.guess-input1');
-    var challengerGuess = guessInput1Field.value
-    var guessMessage1 = document.querySelector('.no-guesses1')
+    var challengerGuess = parseInt(guessInput1Field.value, 10);
+    var guessMessage1 = document.querySelector('.no-guesses1');
+    var highMessage = 'That number is too high';
+    var lowMessage = 'That number is too low';
+    var correctMessage = 'BOOM! Correct number!';
     if(challengerGuess > currentNum){
-      return 'That number is too high';
+      return guessMessage1.innerText = highMessage;
     } else if (challengerGuess < currentNum) {
-      return 'That number is too low';
+      return guessMessage1.innerText = lowMessage;
     } else if (challengerGuess === currentNum){
-      return 'BOOM! Correct number!';
+      return guessMessage1.innerText = correctMessage;
     };
-
   };
 
   function user2Guess(challengerGuess){
