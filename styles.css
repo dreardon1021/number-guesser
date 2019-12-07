@@ -165,9 +165,9 @@ span {
 .challenger-vertical-line {
 display: inline-block;
   border: 1px solid #d1d2d4;
-  height: 100%-10px;
+  height: calc(100%-10px);
   margin-top: 5px;
-  maring-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .latest-guess-h2 {
@@ -272,7 +272,8 @@ p.c-name {
   padding-right: 25px;
 }
 
-.no-guesses {
+.no-guesses1,
+.no-guesses2 {
   font-size: 20px;
   position: absolute;
   margin: 0px;
