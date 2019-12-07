@@ -73,3 +73,33 @@ function enableClearButton() {
       clearFormButton.classList.remove('enable-button');
     }
   };
+
+// Feature guess Messages
+  var currentNum = 56
+  var guessMessage1 = document.querySelector('.no-guesses1')
+
+  function user1Guess(challengerGuess){
+    var guessInput1Field = document.querySelector('.guess-input1');
+    var challengerGuess = guessInput1Field.value
+    var guessMessage1 = document.querySelector('.no-guesses1')
+    if(challengerGuess > currentNum){
+      return 'That number is too high';
+    } else if (challengerGuess < currentNum) {
+      return 'That number is too low';
+    } else if (challengerGuess === currentNum){
+      return 'BOOM! Correct number!';
+    };
+
+  };
+
+  function user2Guess(challengerGuess){
+    var guessInput2Field = document.querySelector('.guess-input2');
+    var challengerGuess = guessInput2Field.value
+    if(challengerGuess > currentNum){
+      return 'That number is too high';
+    } else if (challengerGuess < currentNum) {
+      return 'That number is too low';
+    } else if (challengerGuess === currentNum){
+      return 'BOOM! Correct number!';
+    };
+  };
