@@ -244,6 +244,7 @@ p.c-name {
   align-items: center;
   width: 50%;
   height: 145px;
+  position: relative;
 }
 
 .buttons-flex {
@@ -259,7 +260,8 @@ p.c-name {
 .no-guesses {
   font-size: 20px;
   position: absolute;
-  bottom: -113px;
+  margin: 0px;
+  bottom: 2px;
 }
 
 .set-range {
