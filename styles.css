@@ -256,7 +256,8 @@ p.c-name {
   padding-right: 25px;
 }
 
-.no-guesses {
+.no-guesses1,
+.no-guesses2 {
   font-size: 20px;
   position: absolute;
   bottom: -113px;

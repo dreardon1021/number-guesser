@@ -48,28 +48,36 @@ function clearGuessInput() {
   };
   submitButton.setAttribute('disabled', "");
   submitButton.classList.remove('enable-button');
+}
+
+
+//Start of logic for BOOM!,numHigh, numLow
+
+var currentNum = 56
+var guessMessage1 = document.querySelector('.no-guesses1')
+
+function user1Guess(challengerGuess){
+  var guessInput1Field = document.querySelector('.guess-input1');
+  var challengerGuess = guessInput1Field.value
+  var guessMessage1 = document.querySelector('.no-guesses1')
+  if(challengerGuess > currentNum){
+    return 'That number is too high';
+  } else if (challengerGuess < currentNum) {
+    return 'That number is too low';
+  } else if (challengerGuess === currentNum){
+    return 'BOOM! Correct number!';
+  };
+
 };
 
-function enableSubmit() {
-  var submitButton = document.querySelector('.submit-form-button');
-  var gameForm = document.querySelector('form');
-  if (gameForm.checkValidity() === true){
-    submitButton.removeAttribute('disabled');
-    submitButton.classList.add('enable-button');
-  } else if (gameForm.checkValidity() === false){
-    submitButton.setAttribute('disabled', "");
-    submitButton.classList.remove('enable-button');
-    };
+function user2Guess(challengerGuess){
+  var guessInput2Field = document.querySelector('.guess-input2');
+  var challengerGuess = guessInput2Field.value
+  if(challengerGuess > currentNum){
+    return 'That number is too high';
+  } else if (challengerGuess < currentNum) {
+    return 'That number is too low';
+  } else if (challengerGuess === currentNum){
+    return 'BOOM! Correct number!';
   };
-
-function enableClearButton() {
-  var clearFormButton = document.querySelector('.clear-form-button')
-  var gameForm = document.querySelector('form');
-      if (gameForm.length > 0){
-      clearFormButton.removeAttribute('disabled');
-      clearFormButton.classList.add('enable-button');
-    } else if (gameForm.length === 0){
-      clearFormButton.setAttribute('disabled', "");
-      clearFormButton.classList.remove('enable-button');
-    }
-  };
+};
