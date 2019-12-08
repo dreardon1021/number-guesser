@@ -7,7 +7,10 @@ document.querySelector('.submit-form-button').addEventListener('click', addChall
 document.querySelector('.submit-form-button').addEventListener('click', clearGuessInput);
 document.querySelector('form').addEventListener('keyup', enableSubmit);
 document.querySelector('form').addEventListener('keyup', enableClearButton);
-document.querySelector('.update-button').addEventListener('click', printRange)
+document.querySelector('.update-button').addEventListener('click', printRange);
+document.querySelector('.update-button').addEventListener('click', convertMin);
+document.querySelector('.update-button').addEventListener('click', convertMax);
+document.querySelector('.update-button').addEventListener('click', changeRange);
 
 
 
@@ -122,7 +125,7 @@ function passGuess2 () {
   };
 
 
-  function printRange() {
+function printRange() {
     var minRangeInput = document.querySelector('.min-range');
     var maxRangeInput = document.querySelector('.max-range');
     var minValue = minRangeInput.value;
@@ -132,3 +135,19 @@ function passGuess2 () {
     minElement.innerText = minValue;
     maxElement.innerText = maxValue;
   };
+
+function convertMin() {
+  var rangeMinInputField = document.querySelector('.min-range');
+  var rangeMinInput = rangeMinInputField.value;
+  return rangeMinNum = parseInt(rangeMinInput, 10);
+};
+
+function convertMax() {
+  var rangeMaxInputField = document.querySelector('.max-range');
+  var rangeMaxInput = rangeMaxInputField.value;
+  return rangeMaxNum = parseInt(rangeMaxInput, 10);
+};
+
+function changeRange () {
+  return currentNum = Math.floor(Math.random() * (rangeMaxNum - rangeMinNum) + rangeMinNum);
+};
