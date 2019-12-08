@@ -1,8 +1,12 @@
 document.querySelector('.clear-form-button').addEventListener('click', clearFormInput);
+document.querySelector('.submit-form-button').addEventListener('click', user1GuessConversion)
+document.querySelector('.submit-form-button').addEventListener('click', passGuess1)
 document.querySelector('.submit-form-button').addEventListener('click', addChallengers);
 document.querySelector('.submit-form-button').addEventListener('click', clearGuessInput);
 document.querySelector('form').addEventListener('keyup', enableSubmit);
 document.querySelector('form').addEventListener('keyup', enableClearButton);
+
+
 
 function clearFormInput() {
   var inputFields = document.querySelectorAll('.middle-left-input');
@@ -17,8 +21,11 @@ function clearFormInput() {
   clearFormButton.classList.remove('enable-button');
 };
 
+
+
+
+// Adds challenger names and guesses into respected HTML elements
 function addChallengers(){
-  console.log('addNames')
   var nameInput1 = document.querySelector('.name-input1');
   var nameInput2 = document.querySelector('.name-input2');
   var guessInput1Field = document.querySelector('.guess-input1');
@@ -74,39 +81,32 @@ function enableClearButton() {
     }
   };
 
+
+
 // Feature guess Messages print for users
 
-  var currentNum = 56
-  document.querySelector('.submit-form-button').addEventListener('click', user1Guess)
+var currentNum = 56;
 
-  function user1Guess(){
-    console.log(user1Guess);
-    var guessInput1Field = document.querySelector('.guess-input1');
-    var challengerGuess = Number(guessInput1Field.value);
-    var guessMessage1 = document.querySelector('.no-guesses1');
-    var highMessage = 'That number is too high';
-    var lowMessage = 'That number is too low';
-    var correctMessage = 'BOOM! Correct number!';
-    if(challengerGuess > currentNum){
-      console.log('high message')
-      guessMessage1.innerText = highMessage;
-    } else if (challengerGuess < currentNum) {
-      console.log('low message')
-      guessMessage1.innerText = lowMessage;
-    } else if (challengerGuess === currentNum){
-      console.log('correct message')
-      guessMessage1.innerText = correctMessage;
-    };
-  };
 
-  function user2Guess(challengerGuess){
-    var guessInput2Field = document.querySelector('.guess-input2');
-    var challengerGuess = guessInput2Field.value
-    if(challengerGuess > currentNum){
-      return 'That number is too high';
-    } else if (challengerGuess < currentNum) {
-      return 'That number is too low';
-    } else if (challengerGuess === currentNum){
-      return 'BOOM! Correct number!';
+function user1GuessConversion() {
+  var guessInput1Field = document.querySelector('.guess-input1');
+  var guess1Input = guessInput1Field.value;
+  // console.log(parseInt(guess1Input, 10))
+  return parseInt(guess1Input, 10);
+};
+
+
+function passGuess1 () {
+  var guessMessage1 = document.querySelector('.no-guesses1');
+  console.log('passing');
+    if(user1GuessConversion() > currentNum) {
+      console.log('high message');
+      guessMessage1.innerText = 'That number is too high';
+    } else if (user1GuessConversion() < currentNum) {
+      console.log('low message');
+      guessMessage1.innerText = 'That number is too low';
+    } else if (user1GuessConversion() === currentNum) {
+      console.log('correct message');
+      guessMessage1.innerText = 'BOOM! Correct number!';
     };
   };
