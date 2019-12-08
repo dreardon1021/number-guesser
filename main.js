@@ -84,7 +84,7 @@ function enableClearButton() {
 
 // Feature guess Messages print for users
 
-var currentNum = 56;
+var currentNum = Math.floor(Math.random() * 100 + 1);
 
 function user1GuessConversion() {
   var guessInput1Field = document.querySelector('.guess-input1');
@@ -111,11 +111,11 @@ function passGuess1 () {
 
 function passGuess2 () {
   var guessMessage2 = document.querySelector('.no-guesses2');
-    if(user1GuessConversion() > currentNum) {
+    if(user2GuessConversion() > currentNum) {
       guessMessage2.innerText = 'That number is too high';
-    } else if (user1GuessConversion() < currentNum) {
+    } else if (user2GuessConversion() < currentNum) {
         guessMessage2.innerText = 'That number is too low';
-    } else if (user1GuessConversion() === currentNum) {
+    } else if (user2GuessConversion() === currentNum) {
       guessMessage2.innerText = 'BOOM! Correct number!';
     };
   };
