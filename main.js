@@ -77,23 +77,25 @@ function enableClearButton() {
 // Feature guess Messages print for users
 
   var currentNum = 56
-  var guessMessage1 = document.querySelector('.no-guesses1')
   document.querySelector('.submit-form-button').addEventListener('click', user1Guess)
 
   function user1Guess(){
     console.log(user1Guess);
     var guessInput1Field = document.querySelector('.guess-input1');
-    var challengerGuess = parseInt(guessInput1Field.value, 10);
+    var challengerGuess = Number(guessInput1Field.value);
     var guessMessage1 = document.querySelector('.no-guesses1');
     var highMessage = 'That number is too high';
     var lowMessage = 'That number is too low';
     var correctMessage = 'BOOM! Correct number!';
     if(challengerGuess > currentNum){
-      return guessMessage1.innerText = highMessage;
+      console.log('high message')
+      guessMessage1.innerText = highMessage;
     } else if (challengerGuess < currentNum) {
-      return guessMessage1.innerText = lowMessage;
+      console.log('low message')
+      guessMessage1.innerText = lowMessage;
     } else if (challengerGuess === currentNum){
-      return guessMessage1.innerText = correctMessage;
+      console.log('correct message')
+      guessMessage1.innerText = correctMessage;
     };
   };
 
