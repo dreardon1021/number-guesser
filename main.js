@@ -7,6 +7,7 @@ document.querySelector('.submit-form-button').addEventListener('click', addChall
 document.querySelector('.submit-form-button').addEventListener('click', clearGuessInput);
 document.querySelector('form').addEventListener('keyup', enableSubmit);
 document.querySelector('form').addEventListener('keyup', enableClearButton);
+document.querySelector('.update-button').addEventListener('click', printRange)
 
 
 
@@ -118,4 +119,16 @@ function passGuess2 () {
     } else if (user2GuessConversion() === currentNum) {
       guessMessage2.innerText = 'BOOM! Correct number!';
     };
+  };
+
+
+  function printRange() {
+    var minRangeInput = document.querySelector('.min-range');
+    var maxRangeInput = document.querySelector('.max-range');
+    var minValue = minRangeInput.value;
+    var maxValue = maxRangeInput.value;
+    var minElement = document.querySelector('.range-min');
+    var maxElement = document.querySelector('.range-max');
+    minElement.innerText = minValue;
+    maxElement.innerText = maxValue;
   };
