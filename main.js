@@ -1,23 +1,44 @@
 document.querySelector('.clear-form-button').addEventListener('click', clearFormInput);
-document.querySelector('.submit-form-button').addEventListener('click', user1GuessConversion)
-document.querySelector('.submit-form-button').addEventListener('click', passGuess1)
-document.querySelector('.submit-form-button').addEventListener('click', user2GuessConversion)
-document.querySelector('.submit-form-button').addEventListener('click', passGuess2)
-document.querySelector('.submit-form-button').addEventListener('click', addChallengers);
-document.querySelector('.submit-form-button').addEventListener('click', clearGuessInput);
-document.querySelector('form').addEventListener('keyup', enableSubmit);
-document.querySelector('form').addEventListener('keyup', enableClearButton);
-document.querySelector('.update-button').addEventListener('click', printRange);
-document.querySelector('.update-button').addEventListener('click', convertMin);
-document.querySelector('.update-button').addEventListener('click', convertMax);
-document.querySelector('.update-button').addEventListener('click', changeRange);
+document.querySelector('.submit-form-button').addEventListener ('click', engageSubmitListeners);
+document.querySelector('form').addEventListener('keyup', enableButtons);
+document.querySelector('.update-button').addEventListener('click', updateRange);
 
+//event handler functions
+function engageSubmitListeners() {
+  user1GuessConversion();
+  passGuess1();
+  user2GuessConversion();
+  passGuess2();
+  addChallengers();
+  clearGuessInput();
+};
 
+function enableButtons() {
+  enableSubmit();
+  enableClearButton();
+};
 
+function updateRange() {
+  printRange();
+  convertMin();
+  convertMax();
+  changeRange();
+};
+
+function engageSubmitListeners() {
+  user1GuessConversion();
+  passGuess1();
+  user2GuessConversion();
+  passGuess2();
+  addChallengers();
+  clearGuessInput();
+};
+
+// clears form funtion
 function clearFormInput() {
   var inputFields = document.querySelectorAll('.middle-left-input');
   for (var i=0; i < inputFields.length; i++){
-    inputFields[i].value = null;
+    inputFields[i].value = '';
   };
   var submitButton = document.querySelector('.submit-form-button');
   var clearFormButton = document.querySelector('.clear-form-button')
@@ -52,8 +73,8 @@ function addChallengers(){
 function clearGuessInput() {
   var guessInputFields = document.querySelectorAll('.guess-input-field');
   var submitButton = document.querySelector('.submit-form-button');
-  var clearFormButton = document.querySelector('.clear-form-button')
-  var resetButton = document.querySelector('.reset-game')
+  var clearFormButton = document.querySelector('.clear-form-button');
+  var resetButton = document.querySelector('.reset-game');
   for (var i=0; i < guessInputFields.length; i++){
     guessInputFields[i].value = null;
   };
@@ -74,7 +95,7 @@ function enableSubmit() {
   };
 
 function enableClearButton() {
-  var clearFormButton = document.querySelector('.clear-form-button')
+  var clearFormButton = document.querySelector('.clear-form-button');
   var gameForm = document.querySelector('form');
       if (gameForm.length > 0){
       clearFormButton.removeAttribute('disabled');
@@ -82,13 +103,15 @@ function enableClearButton() {
     } else if (gameForm.length === 0){
       clearFormButton.setAttribute('disabled', "");
       clearFormButton.classList.remove('enable-button');
-    }
+    };
   };
 
 
 // Feature guess Messages print for users
 
 var currentNum = Math.floor(Math.random() * 100 + 1);
+var rangeMinNum;
+var rangeMaxNum;
 
 function user1GuessConversion() {
   var guessInput1Field = document.querySelector('.guess-input1');
@@ -102,7 +125,7 @@ function user2GuessConversion() {
   return parseInt(guess1Input, 10);
 };
 
-function passGuess1 () {
+function passGuess1() {
   var guessMessage1 = document.querySelector('.no-guesses1');
     if(user1GuessConversion() > currentNum) {
       guessMessage1.innerText = 'That number is too high';
@@ -113,7 +136,7 @@ function passGuess1 () {
     };
   };
 
-function passGuess2 () {
+function passGuess2() {
   var guessMessage2 = document.querySelector('.no-guesses2');
     if(user2GuessConversion() > currentNum) {
       guessMessage2.innerText = 'That number is too high';
@@ -139,15 +162,15 @@ function printRange() {
 function convertMin() {
   var rangeMinInputField = document.querySelector('.min-range');
   var rangeMinInput = rangeMinInputField.value;
-  return rangeMinNum = parseInt(rangeMinInput, 10);
+  rangeMinNum = parseInt(rangeMinInput, 10);
 };
 
 function convertMax() {
   var rangeMaxInputField = document.querySelector('.max-range');
   var rangeMaxInput = rangeMaxInputField.value;
-  return rangeMaxNum = parseInt(rangeMaxInput, 10);
+  rangeMaxNum = parseInt(rangeMaxInput, 10);
 };
 
-function changeRange () {
-  return currentNum = Math.floor(Math.random() * (rangeMaxNum - rangeMinNum) + rangeMinNum);
+function changeRange() {
+  currentNum = Math.floor(Math.random() * (rangeMaxNum - rangeMinNum) + rangeMinNum);
 };
