@@ -179,10 +179,12 @@ function addC1Winner() {
   var nameInputTwo = document.querySelector('.name-input2');
   var challenger1Value = nameInputOne.value;
   var challenger2Value = nameInputTwo.value;
+  var winnerCard = document.querySelector('.challenge-outcome');
   if(user1GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger1Value;
+    winnerCard.style.visibility = "visible";
   };
 };
 
@@ -194,9 +196,11 @@ function addC2Winner() {
   var nameInputTwo = document.querySelector('.name-input2');
   var challenger1Value = nameInputOne.value;
   var challenger2Value = nameInputTwo.value;
+  var winnerCard = document.querySelector('.challenge-outcome');
   if(user2GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger2Value;
+    winnerCard.style.visibility = "visible";
   };
 };
