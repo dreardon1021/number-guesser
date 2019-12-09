@@ -173,15 +173,14 @@ function printRange() {
 function addC1Winner() {
   var challenger1Name = document.querySelector('.c1-name');
   var challenger2Name = document.querySelector('.c2-name');
-  var winnerName = document.querySelector('.winner');
+  var winnerName = document.querySelector('.c-name');
   var nameInputOne = document.querySelector('.name-input1');
   var nameInputTwo = document.querySelector('.name-input2');
   var challenger1Value = nameInputOne.value;
   var challenger2Value = nameInputTwo.value;
   if(user1GuessConversion() === currentNum) {
-    console.log("conditional statement Engage")
-    challenger1name.innerText = challenger1Value;
-    challenger2name.innerText = challenger2Value;
-    winnerName.innerText = winnerName.value;
+    challenger1Name.innerText = challenger1Value;
+    challenger2Name.innerText = challenger2Value;
+    winnerName.innerText = challenger1Value;
   };
 };
