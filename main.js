@@ -9,6 +9,7 @@ function engageSubmitListeners() {
   passGuess1();
   user2GuessConversion();
   passGuess2();
+  addC1Winner();
   addChallengers();
   clearGuessInput();
 };
@@ -23,15 +24,6 @@ function updateRange() {
   convertMin();
   convertMax();
   changeRange();
-};
-
-function engageSubmitListeners() {
-  user1GuessConversion();
-  passGuess1();
-  user2GuessConversion();
-  passGuess2();
-  addChallengers();
-  clearGuessInput();
 };
 
 // clears form funtion
@@ -113,6 +105,22 @@ var currentNum = Math.floor(Math.random() * 100 + 1);
 var rangeMinNum;
 var rangeMaxNum;
 
+function convertMin() {
+  var rangeMinInputField = document.querySelector('.min-range');
+  var rangeMinInput = rangeMinInputField.value;
+  rangeMinNum = parseInt(rangeMinInput, 10);
+};
+
+function convertMax() {
+  var rangeMaxInputField = document.querySelector('.max-range');
+  var rangeMaxInput = rangeMaxInputField.value;
+  rangeMaxNum = parseInt(rangeMaxInput, 10);
+};
+
+function changeRange() {
+  currentNum = Math.floor(Math.random() * (rangeMaxNum - rangeMinNum) + rangeMinNum);
+};
+
 function user1GuessConversion() {
   var guessInput1Field = document.querySelector('.guess-input1');
   var guess1Input = guessInput1Field.value;
@@ -127,6 +135,8 @@ function user2GuessConversion() {
 
 function passGuess1() {
   var guessMessage1 = document.querySelector('.no-guesses1');
+  var challenger1Name = document.querySelector('.c1-name');
+  var challenger2Name = document.querySelector('.c2-name');
     if(user1GuessConversion() > currentNum) {
       guessMessage1.innerText = 'That number is too high';
     } else if (user1GuessConversion() < currentNum) {
@@ -135,6 +145,7 @@ function passGuess1() {
       guessMessage1.innerText = 'BOOM! Correct number!';
     };
   };
+
 
 function passGuess2() {
   var guessMessage2 = document.querySelector('.no-guesses2');
@@ -159,18 +170,18 @@ function printRange() {
     maxElement.innerText = maxValue;
   };
 
-function convertMin() {
-  var rangeMinInputField = document.querySelector('.min-range');
-  var rangeMinInput = rangeMinInputField.value;
-  rangeMinNum = parseInt(rangeMinInput, 10);
-};
-
-function convertMax() {
-  var rangeMaxInputField = document.querySelector('.max-range');
-  var rangeMaxInput = rangeMaxInputField.value;
-  rangeMaxNum = parseInt(rangeMaxInput, 10);
-};
-
-function changeRange() {
-  currentNum = Math.floor(Math.random() * (rangeMaxNum - rangeMinNum) + rangeMinNum);
+function addC1Winner() {
+  var challenger1Name = document.querySelector('.c1-name');
+  var challenger2Name = document.querySelector('.c2-name');
+  var winnerName = document.querySelector('.winner');
+  var nameInputOne = document.querySelector('.name-input1');
+  var nameInputTwo = document.querySelector('.name-input2');
+  var challenger1Value = nameInputOne.value;
+  var challenger2Value = nameInputTwo.value;
+  if(user1GuessConversion() === currentNum) {
+    console.log("conditional statement Engage")
+    challenger1name.innerText = challenger1Value;
+    challenger2name.innerText = challenger2Value;
+    winnerName.innerText = winnerName.value;
+  };
 };
