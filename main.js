@@ -204,3 +204,11 @@ function addC2Winner() {
     winnerCard.style.visibility = "visible";
   };
 };
+
+var submitButton = document.querySelector('.submit-form-button'), count = 0;
+
+submitButton.onclick = function countClicks() {
+  var clickNumber = document.querySelector('.click-number');
+  count += 1;
+  clickNumber.innerText = count;
+}
