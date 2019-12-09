@@ -10,6 +10,7 @@ function engageSubmitListeners() {
   user2GuessConversion();
   passGuess2();
   addC1Winner();
+  addC2Winner();
   addChallengers();
   clearGuessInput();
 };
@@ -182,5 +183,20 @@ function addC1Winner() {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger1Value;
+  };
+};
+
+function addC2Winner() {
+  var challenger1Name = document.querySelector('.c1-name');
+  var challenger2Name = document.querySelector('.c2-name');
+  var winnerName = document.querySelector('.c-name');
+  var nameInputOne = document.querySelector('.name-input1');
+  var nameInputTwo = document.querySelector('.name-input2');
+  var challenger1Value = nameInputOne.value;
+  var challenger2Value = nameInputTwo.value;
+  if(user2GuessConversion() === currentNum) {
+    challenger1Name.innerText = challenger1Value;
+    challenger2Name.innerText = challenger2Value;
+    winnerName.innerText = challenger2Value;
   };
 };
