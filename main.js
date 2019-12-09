@@ -2,6 +2,8 @@ document.querySelector('.clear-form-button').addEventListener('click', clearForm
 document.querySelector('.submit-form-button').addEventListener ('click', engageSubmitListeners);
 document.querySelector('form').addEventListener('keyup', enableButtons);
 document.querySelector('.update-button').addEventListener('click', updateRange);
+document.querySelector('.close-button').addEventListener('click', closeCard)
+
 
 //event handler functions
 function engageSubmitListeners() {
@@ -203,6 +205,11 @@ function addC2Winner() {
     winnerName.innerText = challenger2Value;
     winnerCard.style.visibility = "visible";
   };
+};
+
+function closeCard() {
+  var winnerCard = document.querySelector('.challenge-outcome');
+  winnerCard.parentNode.removeChild(winnerCard);
 };
 
 var submitButton = document.querySelector('.submit-form-button'), count = 0;
