@@ -153,6 +153,17 @@ top: 240px;
   height: 20px;
 }
 
+.out-of-range-error {
+  color: #dd1972;
+  display: flex;
+  visibility: hidden;
+}
+
+.out-of-range-error-p {
+  margin-left: 4px;
+  margin-bottom: 0;
+}
+
     /*error messages for range end */
 
 .label-input-flex {

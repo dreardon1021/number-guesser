@@ -7,8 +7,10 @@ document.querySelector('.update-button').addEventListener('click', updateRange);
 function engageSubmitListeners() {
   user1GuessConversion();
   passGuess1();
+  showRangeErrorC1();
   user2GuessConversion();
   passGuess2();
+  showRangeErrorC2();
   addC1Winner();
   addC2Winner();
   addChallengers();
@@ -26,7 +28,7 @@ function updateRange() {
   convertMax();
   changeRange();
   showMinError();
-  showMaxError()
+  showMaxError();
 };
 
 // clears form funtion
@@ -230,4 +232,26 @@ submitButton.onclick = function countClicks() {
   var clickNumber = document.querySelector('.click-number');
   count += 1;
   clickNumber.innerText = count;
-}
+};
+
+function showRangeErrorC1() {
+var rangeError = document.querySelector('.challenger-1-range-error');
+  if (user1GuessConversion() < rangeMinNum){
+    rangeError.style.visibility = 'visible';
+  } else if (user1GuessConversion() > rangeMaxNum){
+    rangeError.style.visibility = 'visible';
+  } else {
+    rangeError.style.visibility = 'hidden';
+  };
+};
+
+function showRangeErrorC2() {
+var rangeError = document.querySelector('.challenger-2-range-error');
+  if (user2GuessConversion() < rangeMinNum){
+    rangeError.style.visibility = 'visible';
+  } else if (user2GuessConversion() > rangeMaxNum){
+    rangeError.style.visibility = 'visible';
+  } else {
+    rangeError.style.visibility = 'hidden';
+  };
+};
