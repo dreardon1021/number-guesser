@@ -28,13 +28,12 @@ function updateRange() {
   convertMax();
   changeRange();
   showMinError();
-  showMaxError();
 };
 
 // clears form funtion
 function clearFormInput() {
   var inputFields = document.querySelectorAll('.middle-left-input');
-  for (var i=0; i < inputFields.length; i++){
+  for (var i=0; i < inputFields.length; i++) {
     inputFields[i].value = '';
   };
   var submitButton = document.querySelector('.submit-form-button');
@@ -96,10 +95,10 @@ function enableSubmit() {
 function enableClearButton() {
   var clearFormButton = document.querySelector('.clear-form-button');
   var gameForm = document.querySelector('form');
-      if (gameForm.length > 0){
+      if (gameForm.length > 0) {
       clearFormButton.removeAttribute('disabled');
       clearFormButton.classList.add('enable-button');
-    } else if (gameForm.length === 0){
+    } else if (gameForm.length === 0) {
       clearFormButton.setAttribute('disabled', "");
       clearFormButton.classList.remove('enable-button');
     };
@@ -147,8 +146,13 @@ function showMinError() {
   var maxValue = maxRangeInput.value;
   var errorMessage = document.querySelector('.min-error-message');
   if(minValue > maxValue) {
+    console.log('error')
     errorMessage.style.display = 'flex';
     minRangeInput.style.border = '2px solid #dd1972';
+  } else if (minValue < maxValue) {
+    console.log('defa')
+    errorMessage.style.display = 'none';
+    minRangeInput.style.border = '1px solid #d1d2d4'
   };
 };
 
