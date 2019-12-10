@@ -144,6 +144,7 @@ function showMinError() {
   var maxValue = maxRangeInput.value;
   if(minValue > maxValue) {
     
+
   };
 };
 

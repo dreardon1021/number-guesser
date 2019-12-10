@@ -125,6 +125,17 @@ span {
   width: 22%;
   margin-top: 22px;
 }
+    /*error messages for range */
+.min-error {
+  color: #dd1972;
+}
+
+.error-icon {
+  width: 20px;
+  height: 20px;
+}
+
+    /*error messages for range end */
 
 .label-input-flex {
   display: flex;
