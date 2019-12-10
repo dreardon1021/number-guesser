@@ -2,6 +2,7 @@ document.querySelector('.clear-form-button').addEventListener('click', clearForm
 document.querySelector('.submit-form-button').addEventListener ('click', engageSubmitListeners);
 document.querySelector('form').addEventListener('keyup', enableButtons);
 document.querySelector('.update-button').addEventListener('click', updateRange);
+document.querySelector()
 
 //event handler functions
 function engageSubmitListeners() {
@@ -23,11 +24,11 @@ function enableButtons() {
 };
 
 function updateRange() {
-  printRange();
   convertMin();
   convertMax();
   changeRange();
   showMinError();
+  printRange();
 };
 
 // clears form funtion
@@ -259,3 +260,7 @@ var rangeError = document.querySelector('.challenger-2-range-error');
     rangeError.style.visibility = 'hidden';
   };
 };
+
+function enableUpdate() {
+  if (convertMax() > convertMin())
+}

@@ -20,22 +20,24 @@
     <main>
       <section class="main-column column-left">
         <div class="set-range left-box">
-          <h2>Set Range</h2>
-          <div class="label-input-flex">
-            <div class="label-input">
-              <label for="min-range">Min Range</label>
-              <input class="min-range" type="number" name="min-range" required>
+          <form class="range-form">
+            <h2>Set Range</h2>
+            <div class="label-input-flex">
+              <div class="label-input">
+                <label for="min-range">Min Range</label>
+                <input class="min-range" type="number" name="min-range" required>
+              </div>
+              <div class="min-error-message">
+                <img class="error-icon" src="assets/error-icon.svg" alt="ERROR">
+                <p class="min-error">Must be less than max</p>
+              </div>
+              <div class="label-input">
+                <label for="max-range">Max Range</label>
+                <input class="max-range" type="number" name="max-range" required>
+              </div>
+              <button class="update-button" type="button" name="update" disabled>UPDATE</button>
             </div>
-            <div class="min-error-message">
-              <img class="error-icon" src="assets/error-icon.svg" alt="ERROR">
-              <p class="min-error">Must be less than max</p>
-            </div>
-            <div class="label-input">
-              <label for="max-range">Max Range</label>
-              <input class="max-range" type="number" name="max-range" required>
-            </div>
-            <button class="update-button" type="button" name="update" disabled>UPDATE</button>
-          </div>
+        </form>
         </div>
         <div class="current-range left-box">
           <p>The Current Range is <em class="range-min">1</em> to <em class="range-max">100</em></p>
