@@ -26,6 +26,7 @@ function updateRange() {
   convertMax();
   changeRange();
   showMinError();
+  showMaxError()
 };
 
 // clears form funtion
@@ -135,15 +136,17 @@ function printRange() {
     maxElement.innerText = maxValue;
   };
 
+
 //Range Error!
 function showMinError() {
-  console.log('MIN ERROR');
   var minRangeInput = document.querySelector('.min-range');
   var maxRangeInput = document.querySelector('.max-range');
   var minValue = minRangeInput.value;
   var maxValue = maxRangeInput.value;
+  var errorMessage = document.querySelector('.min-error-message');
   if(minValue > maxValue) {
-    
+    errorMessage.style.display = 'flex';
+    minRangeInput.style.border = '2px solid #dd1972';
   };
 };
 
