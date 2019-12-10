@@ -1,8 +1,8 @@
 document.querySelector('.clear-form-button').addEventListener('click', clearFormInput);
 document.querySelector('.submit-form-button').addEventListener ('click', engageSubmitListeners);
-document.querySelector('form').addEventListener('keyup', enableButtons);
+document.querySelector('.challenger-form').addEventListener('keyup', enableButtons);
 document.querySelector('.update-button').addEventListener('click', updateRange);
-document.querySelector()
+document.querySelector('.range-form').addEventListener('keyup', enableUpdate);
 
 //event handler functions
 function engageSubmitListeners() {
@@ -82,7 +82,7 @@ function clearGuessInput() {
 //enable sumbit buttons with form validiity
 function enableSubmit() {
   var submitButton = document.querySelector('.submit-form-button');
-  var gameForm = document.querySelector('form');
+  var gameForm = document.querySelector('.challenger-form');
   if (gameForm.checkValidity() === true){
     submitButton.removeAttribute('disabled');
     submitButton.classList.add('enable-button');
@@ -95,7 +95,7 @@ function enableSubmit() {
 //enable clear buttons on form validiity
 function enableClearButton() {
   var clearFormButton = document.querySelector('.clear-form-button');
-  var gameForm = document.querySelector('form');
+  var gameForm = document.querySelector('.challenger-form');
       if (gameForm.length > 0) {
       clearFormButton.removeAttribute('disabled');
       clearFormButton.classList.add('enable-button');
@@ -262,5 +262,12 @@ var rangeError = document.querySelector('.challenger-2-range-error');
 };
 
 function enableUpdate() {
-  if (convertMax() > convertMin())
-}
+  var updateButton = document.querySelector('.update-button');
+  if (rangeMaxNum > rangeMinNum){
+    updateButton.removeAttribute('disabled');
+    updateButton.classList.add('enable-button');
+  } else if (rangeMinNum > rangeMaxNum){
+    updateButton.setAttribute('disabled', "");
+    updateButton.classList.remove('enable-button');
+  };
+};
