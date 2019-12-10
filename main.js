@@ -136,6 +136,7 @@ function printRange() {
     maxElement.innerText = maxValue;
   };
 
+
 //Range Error!
 function showMinError() {
   var minRangeInput = document.querySelector('.min-range');
