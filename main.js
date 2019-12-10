@@ -1,7 +1,8 @@
 document.querySelector('.clear-form-button').addEventListener('click', clearFormInput);
 document.querySelector('.submit-form-button').addEventListener ('click', engageSubmitListeners);
-document.querySelector('form').addEventListener('keyup', enableButtons);
+document.querySelector('.challenger-form').addEventListener('keyup', enableButtons);
 document.querySelector('.update-button').addEventListener('click', updateRange);
+document.querySelector('.range-form').addEventListener('keyup', invokeUpdateHandler);
 
 //event handler functions
 function engageSubmitListeners() {
@@ -22,13 +23,20 @@ function enableButtons() {
   enableClearButton();
 };
 
+function invokeUpdateHandler() {
+  convertMin();
+  convertMax();
+  enableUpdate();
+  showMinError();
+};
+
 function updateRange() {
-  printRange();
   convertMin();
   convertMax();
   changeRange();
-  showMinError();
+  printRange();
 };
+
 
 // clears form funtion
 function clearFormInput() {
@@ -81,7 +89,7 @@ function clearGuessInput() {
 //enable sumbit buttons with form validiity
 function enableSubmit() {
   var submitButton = document.querySelector('.submit-form-button');
-  var gameForm = document.querySelector('form');
+  var gameForm = document.querySelector('.challenger-form');
   if (gameForm.checkValidity() === true){
     submitButton.removeAttribute('disabled');
     submitButton.classList.add('enable-button');
@@ -94,7 +102,7 @@ function enableSubmit() {
 //enable clear buttons on form validiity
 function enableClearButton() {
   var clearFormButton = document.querySelector('.clear-form-button');
-  var gameForm = document.querySelector('form');
+  var gameForm = document.querySelector('.challenger-form');
       if (gameForm.length > 0) {
       clearFormButton.removeAttribute('disabled');
       clearFormButton.classList.add('enable-button');
@@ -113,13 +121,15 @@ var rangeMaxNum;
 function convertMin() {
   var rangeMinInputField = document.querySelector('.min-range');
   var rangeMinInput = rangeMinInputField.value;
-  rangeMinNum = parseInt(rangeMinInput, 10);
+  return rangeMinNum = parseInt(rangeMinInput, 10);
+  // console.log(rangeMinNum);
 };
 
 function convertMax() {
   var rangeMaxInputField = document.querySelector('.max-range');
   var rangeMaxInput = rangeMaxInputField.value;
-  rangeMaxNum = parseInt(rangeMaxInput, 10);
+  return rangeMaxNum = parseInt(rangeMaxInput, 10);
+  // console.log(rangeMaxNum);
 };
 
 function changeRange() {
@@ -142,15 +152,13 @@ function printRange() {
 function showMinError() {
   var minRangeInput = document.querySelector('.min-range');
   var maxRangeInput = document.querySelector('.max-range');
-  var minValue = minRangeInput.value;
-  var maxValue = maxRangeInput.value;
   var errorMessage = document.querySelector('.min-error-message');
-  if(minValue > maxValue) {
+  if(convertMin() > convertMax()) {
     console.log('error')
     errorMessage.style.display = 'flex';
     minRangeInput.style.border = '2px solid #dd1972';
-  } else if (minValue < maxValue) {
-    console.log('defa')
+  } else if (convertMin() < convertMax()) {
+    console.log('no error')
     errorMessage.style.display = 'none';
     minRangeInput.style.border = '1px solid #d1d2d4'
   };
@@ -257,5 +265,16 @@ var rangeError = document.querySelector('.challenger-2-range-error');
     rangeError.style.visibility = 'visible';
   } else {
     rangeError.style.visibility = 'hidden';
+  };
+};
+
+function enableUpdate() {
+  var updateButton = document.querySelector('.update-button');
+  if (rangeMaxNum > rangeMinNum){
+    updateButton.removeAttribute('disabled');
+    updateButton.classList.add('enable-button');
+  } else if (rangeMinNum > rangeMaxNum){
+    updateButton.setAttribute('disabled', "");
+    updateButton.classList.remove('enable-button');
   };
 };
