@@ -232,8 +232,7 @@ submitButton.onclick = function countClicks() {
   var clickNumber = document.querySelector('.click-number');
   count += 1;
   clickNumber.innerText = count;
-}
-
+};
 
 function showRangeErrorC1() {
 var rangeError = document.querySelector('.challenger-1-range-error');
