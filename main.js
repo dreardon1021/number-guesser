@@ -27,13 +27,13 @@ function invokeUpdateHandler() {
   convertMin();
   convertMax();
   enableUpdate();
+  showMinError();
 };
 
 function updateRange() {
   convertMin();
   convertMax();
   changeRange();
-  showMinError();
   printRange();
 };
 
@@ -121,15 +121,15 @@ var rangeMaxNum;
 function convertMin() {
   var rangeMinInputField = document.querySelector('.min-range');
   var rangeMinInput = rangeMinInputField.value;
-  rangeMinNum = parseInt(rangeMinInput, 10);
-  console.log(rangeMinNum);
+  return rangeMinNum = parseInt(rangeMinInput, 10);
+  // console.log(rangeMinNum);
 };
 
 function convertMax() {
   var rangeMaxInputField = document.querySelector('.max-range');
   var rangeMaxInput = rangeMaxInputField.value;
-  rangeMaxNum = parseInt(rangeMaxInput, 10);
-  console.log(rangeMaxNum);
+  return rangeMaxNum = parseInt(rangeMaxInput, 10);
+  // console.log(rangeMaxNum);
 };
 
 function changeRange() {
@@ -152,14 +152,12 @@ function printRange() {
 function showMinError() {
   var minRangeInput = document.querySelector('.min-range');
   var maxRangeInput = document.querySelector('.max-range');
-  var minValue = minRangeInput.value;
-  var maxValue = maxRangeInput.value;
   var errorMessage = document.querySelector('.min-error-message');
-  if(minValue > maxValue) {
+  if(convertMin() > convertMax()) {
     console.log('error')
     errorMessage.style.display = 'flex';
     minRangeInput.style.border = '2px solid #dd1972';
-  } else if (minValue < maxValue) {
+  } else if (convertMin() < convertMax()) {
     console.log('no error')
     errorMessage.style.display = 'none';
     minRangeInput.style.border = '1px solid #d1d2d4'
