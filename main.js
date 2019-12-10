@@ -2,7 +2,7 @@ document.querySelector('.clear-form-button').addEventListener('click', clearForm
 document.querySelector('.submit-form-button').addEventListener ('click', engageSubmitListeners);
 document.querySelector('.challenger-form').addEventListener('keyup', enableButtons);
 document.querySelector('.update-button').addEventListener('click', updateRange);
-document.querySelector('.range-form').addEventListener('keyup', enableUpdate);
+document.querySelector('.range-form').addEventListener('keyup', invokeUpdateHandler);
 
 //event handler functions
 function engageSubmitListeners() {
@@ -23,6 +23,12 @@ function enableButtons() {
   enableClearButton();
 };
 
+function invokeUpdateHandler() {
+  convertMin();
+  convertMax();
+  enableUpdate();
+};
+
 function updateRange() {
   convertMin();
   convertMax();
@@ -30,6 +36,7 @@ function updateRange() {
   showMinError();
   printRange();
 };
+
 
 // clears form funtion
 function clearFormInput() {
@@ -115,12 +122,14 @@ function convertMin() {
   var rangeMinInputField = document.querySelector('.min-range');
   var rangeMinInput = rangeMinInputField.value;
   rangeMinNum = parseInt(rangeMinInput, 10);
+  console.log(rangeMinNum);
 };
 
 function convertMax() {
   var rangeMaxInputField = document.querySelector('.max-range');
   var rangeMaxInput = rangeMaxInputField.value;
   rangeMaxNum = parseInt(rangeMaxInput, 10);
+  console.log(rangeMaxNum);
 };
 
 function changeRange() {
@@ -151,7 +160,7 @@ function showMinError() {
     errorMessage.style.display = 'flex';
     minRangeInput.style.border = '2px solid #dd1972';
   } else if (minValue < maxValue) {
-    console.log('defa')
+    console.log('no error')
     errorMessage.style.display = 'none';
     minRangeInput.style.border = '1px solid #d1d2d4'
   };
