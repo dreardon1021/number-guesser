@@ -2,8 +2,6 @@ document.querySelector('.clear-form-button').addEventListener('click', clearForm
 document.querySelector('.submit-form-button').addEventListener ('click', engageSubmitListeners);
 document.querySelector('form').addEventListener('keyup', enableButtons);
 document.querySelector('.update-button').addEventListener('click', updateRange);
-document.querySelector('.close-button').addEventListener('click', closeCard)
-
 
 //event handler functions
 function engageSubmitListeners() {
@@ -27,6 +25,7 @@ function updateRange() {
   convertMin();
   convertMax();
   changeRange();
+  showMinError();
 };
 
 // clears form funtion
@@ -64,19 +63,20 @@ function addChallengers(){
   guess2.innerText = guess2Input;
 };
 
-
+//Clear guess input on submit
 function clearGuessInput() {
   var guessInputFields = document.querySelectorAll('.guess-input-field');
   var submitButton = document.querySelector('.submit-form-button');
   var clearFormButton = document.querySelector('.clear-form-button');
   var resetButton = document.querySelector('.reset-game');
   for (var i=0; i < guessInputFields.length; i++){
-    guessInputFields[i].value = null;
+    guessInputFields[i].value = '';
   };
   submitButton.setAttribute('disabled', "");
   submitButton.classList.remove('enable-button');
 };
 
+//enable sumbit buttons with form validiity
 function enableSubmit() {
   var submitButton = document.querySelector('.submit-form-button');
   var gameForm = document.querySelector('form');
@@ -89,6 +89,7 @@ function enableSubmit() {
     };
   };
 
+//enable clear buttons on form validiity
 function enableClearButton() {
   var clearFormButton = document.querySelector('.clear-form-button');
   var gameForm = document.querySelector('form');
@@ -101,12 +102,11 @@ function enableClearButton() {
     };
   };
 
-
-// Feature guess Messages print for users
-
+//Generate Random number based on range and prints for user
 var currentNum = Math.floor(Math.random() * 100 + 1);
 var rangeMinNum;
 var rangeMaxNum;
+
 
 function convertMin() {
   var rangeMinInputField = document.querySelector('.min-range');
@@ -124,6 +124,30 @@ function changeRange() {
   currentNum = Math.floor(Math.random() * (rangeMaxNum - rangeMinNum) + rangeMinNum);
 };
 
+function printRange() {
+    var minRangeInput = document.querySelector('.min-range');
+    var maxRangeInput = document.querySelector('.max-range');
+    var minValue = minRangeInput.value;
+    var maxValue = maxRangeInput.value;
+    var minElement = document.querySelector('.range-min');
+    var maxElement = document.querySelector('.range-max');
+    minElement.innerText = minValue;
+    maxElement.innerText = maxValue;
+  };
+
+//Range Error!
+function showMinError() {
+  console.log('MIN ERROR');
+  var minRangeInput = document.querySelector('.min-range');
+  var maxRangeInput = document.querySelector('.max-range');
+  var minValue = minRangeInput.value;
+  var maxValue = maxRangeInput.value;
+  if(minValue > maxValue) {
+    
+  };
+};
+
+// Guess messages print for users
 function user1GuessConversion() {
   var guessInput1Field = document.querySelector('.guess-input1');
   var guess1Input = guessInput1Field.value;
@@ -149,7 +173,6 @@ function passGuess1() {
     };
   };
 
-
 function passGuess2() {
   var guessMessage2 = document.querySelector('.no-guesses2');
     if(user2GuessConversion() > currentNum) {
@@ -161,18 +184,7 @@ function passGuess2() {
     };
   };
 
-
-function printRange() {
-    var minRangeInput = document.querySelector('.min-range');
-    var maxRangeInput = document.querySelector('.max-range');
-    var minValue = minRangeInput.value;
-    var maxValue = maxRangeInput.value;
-    var minElement = document.querySelector('.range-min');
-    var maxElement = document.querySelector('.range-max');
-    minElement.innerText = minValue;
-    maxElement.innerText = maxValue;
-  };
-
+//disaply winner cards
 function addC1Winner() {
   var challenger1Name = document.querySelector('.c1-name');
   var challenger2Name = document.querySelector('.c2-name');
@@ -207,11 +219,8 @@ function addC2Winner() {
   };
 };
 
-function closeCard() {
-  var winnerCard = document.querySelector('.challenge-outcome');
-  winnerCard.parentNode.removeChild(winnerCard);
-};
 
+//add button counter
 var submitButton = document.querySelector('.submit-form-button'), count = 0;
 
 submitButton.onclick = function countClicks() {
