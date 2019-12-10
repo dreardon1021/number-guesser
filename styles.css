@@ -128,10 +128,28 @@ span {
     /*error messages for range */
 .min-error {
   color: #dd1972;
+  margin: 0px;
+  height: 20px;
+  position: relative;
+  left: 10px;
+}
+
+.min-error-message {
+position: absolute;
+display: none;
+top: 240px;
+
+}
+
+.max-error {
+  color: #dd1972;
+  /* display: none; */
+  margin: 0px;
+  height: 20px;
 }
 
 .error-icon {
-  width: 20px;
+  width: 15px;
   height: 20px;
 }
 
@@ -140,7 +158,12 @@ span {
 .label-input-flex {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-content: center;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
 }
 
 .input-guess {
@@ -293,7 +316,7 @@ p.c-name {
 }
 
 .set-range {
-  padding-bottom: 25px;
+  padding-bottom: 30px;
 }
 
 .enable-button {

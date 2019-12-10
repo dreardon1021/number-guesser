@@ -142,9 +142,11 @@ function showMinError() {
   var maxRangeInput = document.querySelector('.max-range');
   var minValue = minRangeInput.value;
   var maxValue = maxRangeInput.value;
+  var errorMessage = document.querySelector('.min-error-message')
   if(minValue > maxValue) {
-    
-
+    console.log('Min Error Conditional')
+    errorMessage.style.display = 'flex'
+    minRangeInput.style.border = '2px solid #dd1972'
   };
 };
 
