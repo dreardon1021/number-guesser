@@ -5,6 +5,9 @@ document.querySelector('.update-button').addEventListener('click', updateRange);
 document.querySelector('.range-form').addEventListener('keyup', invokeUpdateHandler);
 document.querySelector('.column-right').addEventListener('click', closeCard);
 
+var submitButton = document.querySelector('.submit-form-button');
+var count = 0;
+
 function closeCard(event) {
   if(event.target.classList.contains('close-button')) {
     event.target.parentNode.parentNode.remove();
@@ -14,6 +17,7 @@ function closeCard(event) {
 
 //event handler functions
 function engageSubmitListeners() {
+  countClicks();
   user1GuessConversion();
   passGuess1();
   showRangeErrorC1();
@@ -123,8 +127,8 @@ function enableClearButton() {
 
 //Generate Random number based on range and prints for user
 var currentNum = Math.floor(Math.random() * 100 + 1);
-var rangeMinNum;
-var rangeMaxNum;
+var rangeMinNum = 1;
+var rangeMaxNum = 100;
 
 
 function convertMin() {
@@ -212,13 +216,9 @@ function passGuess2() {
 
 
   //add button counter
-  var submitButton = document.querySelector('.submit-form-button'), count = 0;
-  var clickCount;
-
-  submitButton.onclick = function countClicks() {
-    count += 1;
-    clickCount = count;
-    // console.log(clickCount);
+  function countClicks() {
+    count += 2;
+    console.log(count);
   };
 
 
@@ -262,14 +262,13 @@ function addWinner() {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger1Value;
-    clickNumber.innerText = clickCount;
-    console.log(clickCount);
+    console.log(count)
+    clickNumber.innerText = count;
   } else if(user2GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger2Value;
-    clickNumber.innerText = clickCount;
-    console.log(clickCount);
+    clickNumber.innerText = count;
   };
 };
 
@@ -310,8 +309,7 @@ function resetGame() {
   if (user1GuessConversion() === currentNum || user2GuessConversion() === currentNum) {
     clearFormInput();
     changeRange();
-    // console.log(currentNum);
-    clickCount = 0;
-    // console.log(clickCount)
+    console.log(currentNum);
+    count = 0;
   };
 };
