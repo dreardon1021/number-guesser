@@ -3,6 +3,14 @@ document.querySelector('.submit-form-button').addEventListener ('click', engageS
 document.querySelector('.challenger-form').addEventListener('keyup', enableButtons);
 document.querySelector('.update-button').addEventListener('click', updateRange);
 document.querySelector('.range-form').addEventListener('keyup', invokeUpdateHandler);
+document.querySelector('.column-right').addEventListener('click', closeCard);
+
+function closeCard(event) {
+  if(event.target.classList.contains('close-button')) {
+    event.target.parentNode.parentNode.remove();
+  };
+};
+
 
 //event handler functions
 function engageSubmitListeners() {
@@ -12,9 +20,9 @@ function engageSubmitListeners() {
   user2GuessConversion();
   passGuess2();
   showRangeErrorC2();
-  addC1Winner();
-  addC2Winner();
+  createCard();
   addChallengers();
+  addWinner();
   resetGame();
   clearGuessInput();
 };
@@ -202,8 +210,46 @@ function passGuess2() {
     };
   };
 
+
+  //add button counter
+  var submitButton = document.querySelector('.submit-form-button'), count = 0;
+  var clickCount;
+
+  submitButton.onclick = function countClicks() {
+    count += 1;
+    clickCount = count;
+    // console.log(clickCount);
+  };
+
+
 //disaply winner cards
-function addC1Winner() {
+function createCard() {
+  var winnerCard = document.querySelector('.challenge-outcome');
+  var rightColumn = document.querySelector('.column-right');
+  if(user1GuessConversion() === currentNum || user2GuessConversion() === currentNum) {
+    rightColumn.insertAdjacentHTML('afterbegin',
+    `<article class="challenge-outcome">
+      <div class="co-names">
+        <h3 class="c-text c1-name">CHALLENGER 1 NAME</h3>
+        <p class="vs">vs.</p>
+        <h3 class="c-text c2-name">CHALLENGER 2 NAME</h3>
+      </div>
+      <div class="mid-challenge-flex">
+        <hr class="challenge-line">
+        <p class="c-text c-name">CHALLENGER 2 NAME</p>
+        <p class="c-text winner">WINNER</p>
+        <hr class="challenge-line">
+      </div>
+      <div class="outcome-bottom">
+        <p class="c-text"><strong class="click-number">23</strong> Guesses</p>
+        <p class="c-text"> <strong>1</strong> Minute <strong>35</strong> Seconds</p>
+        <button class="close-button"type="button" name="button"></button>
+      </div>
+    </article>`);
+  };
+};
+
+function addWinner() {
   var challenger1Name = document.querySelector('.c1-name');
   var challenger2Name = document.querySelector('.c2-name');
   var winnerName = document.querySelector('.c-name');
@@ -211,40 +257,20 @@ function addC1Winner() {
   var nameInputTwo = document.querySelector('.name-input2');
   var challenger1Value = nameInputOne.value;
   var challenger2Value = nameInputTwo.value;
-  var winnerCard = document.querySelector('.challenge-outcome');
+  var clickNumber = document.querySelector('.click-number');
   if(user1GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger1Value;
-    winnerCard.style.visibility = "visible";
-  };
-};
-
-function addC2Winner() {
-  var challenger1Name = document.querySelector('.c1-name');
-  var challenger2Name = document.querySelector('.c2-name');
-  var winnerName = document.querySelector('.c-name');
-  var nameInputOne = document.querySelector('.name-input1');
-  var nameInputTwo = document.querySelector('.name-input2');
-  var challenger1Value = nameInputOne.value;
-  var challenger2Value = nameInputTwo.value;
-  var winnerCard = document.querySelector('.challenge-outcome');
-  if(user2GuessConversion() === currentNum) {
+    clickNumber.innerText = clickCount;
+    console.log(clickCount);
+  } else if(user2GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger2Value;
-    winnerCard.style.visibility = "visible";
+    clickNumber.innerText = clickCount;
+    console.log(clickCount);
   };
-};
-
-
-//add button counter
-var submitButton = document.querySelector('.submit-form-button'), count = 0;
-
-submitButton.onclick = function countClicks() {
-  var clickNumber = document.querySelector('.click-number');
-  count += 1;
-  clickNumber.innerText = count;
 };
 
 function showRangeErrorC1() {
@@ -281,9 +307,11 @@ function enableUpdate() {
 };
 
 function resetGame() {
-  if (user1GuessConversion() || user2GuessConversion() === currentNum) {
+  if (user1GuessConversion() === currentNum || user2GuessConversion() === currentNum) {
     clearFormInput();
     changeRange();
-    console.log(currentNum);
+    // console.log(currentNum);
+    clickCount = 0;
+    // console.log(clickCount)
   };
 };
