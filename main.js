@@ -21,8 +21,8 @@ function engageSubmitListeners() {
   passGuess2();
   showRangeErrorC2();
   createCard();
-  addWinner();
   addChallengers();
+  addWinner();
   resetGame();
   clearGuessInput();
 };
@@ -213,11 +213,12 @@ function passGuess2() {
 
   //add button counter
   var submitButton = document.querySelector('.submit-form-button'), count = 0;
-  var clickCount = 1;
+  var clickCount;
 
   submitButton.onclick = function countClicks() {
     count += 1;
     clickCount = count;
+    // console.log(clickCount);
   };
 
 
@@ -249,66 +250,28 @@ function createCard() {
 };
 
 function addWinner() {
+  var challenger1Name = document.querySelector('.c1-name');
+  var challenger2Name = document.querySelector('.c2-name');
+  var winnerName = document.querySelector('.c-name');
+  var nameInputOne = document.querySelector('.name-input1');
+  var nameInputTwo = document.querySelector('.name-input2');
+  var challenger1Value = nameInputOne.value;
+  var challenger2Value = nameInputTwo.value;
+  var clickNumber = document.querySelector('.click-number');
   if(user1GuessConversion() === currentNum) {
-    var challenger1Name = document.querySelector('.c1-name');
-    var challenger2Name = document.querySelector('.c2-name');
-    var winnerName = document.querySelector('.c-name');
-    var nameInputOne = document.querySelector('.name-input1');
-    var nameInputTwo = document.querySelector('.name-input2');
-    var challenger1Value = nameInputOne.value;
-    var challenger2Value = nameInputTwo.value;
-    var clickNumber = document.querySelector('.click-number');
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger1Value;
     clickNumber.innerText = clickCount;
+    console.log(clickCount);
   } else if(user2GuessConversion() === currentNum) {
-    var challenger1Name = document.querySelector('.c1-name');
-    var challenger2Name = document.querySelector('.c2-name');
-    var winnerName = document.querySelector('.c-name');
-    var nameInputOne = document.querySelector('.name-input1');
-    var nameInputTwo = document.querySelector('.name-input2');
-    var challenger1Value = nameInputOne.value;
-    var challenger2Value = nameInputTwo.value;
-    var clickNumber = document.querySelector('.click-number');
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger2Value;
     clickNumber.innerText = clickCount;
+    console.log(clickCount);
   };
 };
-
-//
-// function addC1Winner() {
-//   var challenger1Name = document.querySelector('.c1-name');
-//   var challenger2Name = document.querySelector('.c2-name');
-//   var winnerName = document.querySelector('.c-name');
-//   var nameInputOne = document.querySelector('.name-input1');
-//   var nameInputTwo = document.querySelector('.name-input2');
-//   var challenger1Value = nameInputOne.value;
-//   var challenger2Value = nameInputTwo.value;
-//   var clickNumber = document.querySelector('.click-number');
-//   challenger1Name.innerText = challenger1Value;
-//   challenger2Name.innerText = challenger2Value;
-//   winnerName.innerText = challenger1Value;
-//   clickNumber.innerText = clickCount;
-// };
-//
-// function addC2Winner() {
-//   var challenger1Name = document.querySelector('.c1-name');
-//   var challenger2Name = document.querySelector('.c2-name');
-//   var winnerName = document.querySelector('.c-name');
-//   var nameInputOne = document.querySelector('.name-input1');
-//   var nameInputTwo = document.querySelector('.name-input2');
-//   var challenger1Value = nameInputOne.value;
-//   var challenger2Value = nameInputTwo.value;
-//   var winnerCard = document.querySelector('.challenge-outcome');
-//   if(user2GuessConversion() === currentNum) {
-//     challenger1Name.innerText = challenger1Value;
-//     challenger2Name.innerText = challenger2Value;
-//     winnerName.innerText = challenger2Value;
-//   };
-// };
 
 function showRangeErrorC1() {
 var rangeError = document.querySelector('.challenger-1-range-error');
@@ -347,6 +310,8 @@ function resetGame() {
   if (user1GuessConversion() === currentNum || user2GuessConversion() === currentNum) {
     clearFormInput();
     changeRange();
-    console.log(currentNum);
+    // console.log(currentNum);
+    clickCount = 0;
+    // console.log(clickCount)
   };
 };
