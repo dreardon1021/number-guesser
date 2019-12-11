@@ -281,7 +281,7 @@ function enableUpdate() {
 };
 
 function resetGame() {
-  if (user1GuessConversion() || user2GuessConversion() === currentNum) {
+  if (user1GuessConversion() === currentNum || user2GuessConversion() === currentNum) {
     clearFormInput();
     changeRange();
     console.log(currentNum);
