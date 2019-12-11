@@ -1,15 +1,16 @@
 /* whole page items */
 html {
-  height: 100%;
   width: 100%;
-  margin: 0px;
-  padding: 0px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 main {
@@ -22,14 +23,14 @@ label {
 }
 
 button {
-  border-radius: 20px;
-  background-color: #d1d2d4;
-  color: #ffffff;
-  font-size: 22px;
-  font-weight: bold;
-  border: 1px solid #d1d2d4;
   height: 37px;
   margin-top: 20px;
+  color: #fff;
+  border: 1px solid #d1d2d4;
+  border-radius: 20px;
+  background-color: #d1d2d4;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 input {
@@ -39,21 +40,22 @@ input {
 }
 
 h1 {
-  font-size: 70px;
-  font-weight: bolder;
-  margin-top: -13px;
+  margin-top: -5px;
+  margin-bottom: 3px;
   color: #dd1972;
+  font-size: 55px;
+
 }
 
 h2 {
-  margin: 0 0 10px 0;
   font-size: 19px;
   width: 45%;
+  margin: 0 0 4px 0;
 }
 
 h3 {
-  margin: 0;
   font-size: 17px;
+  margin: 0;
   color: #727279;
 }
 
@@ -64,15 +66,15 @@ p {
 /* Logo / header / top page */
 header {
   display: flex;
-  align-items: center;
   flex-direction: column;
   background-color: #404041;
+  align-items: center;
 }
 
 em {
   font-weight: bold;
-  text-decoration: underline;
   font-style: normal;
+  text-decoration: underline;
 }
 
 .logo {
@@ -82,8 +84,8 @@ em {
 }
 
 .logo-line {
-  margin: -27px 10px 0px 10px;
   width: 85px;
+  margin: -27px 10px 0 10px;
   color: white;
 }
 
@@ -106,18 +108,18 @@ span {
 /* Left and right columns of page */
 .column-left {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  width: 50%;
+  height: 105vh;
   border-right: 1px solid #adadad;
   background-color: #f7f7f7;
-  width: 50%;
-  height: 100vh;
+  align-items: center;
 }
 
 .column-right {
-  background-color: #d0d2d3;
   width: 50%;
-  height: 100vh;
+  height: 105vh;
+  background-color: #d0d2d3;
 }
 
 /* left column items */
@@ -125,27 +127,27 @@ span {
   width: 22%;
   margin-top: 22px;
 }
-    /*error messages for range */
+
+/*error messages for range */
 .min-error {
-  color: #dd1972;
-  margin: 0px;
-  height: 20px;
   position: relative;
   left: 10px;
+  height: 20px;
+  margin: 0;
+  color: #dd1972;
 }
 
 .min-error-message {
-position: absolute;
-display: none;
-top: 240px;
-
+  position: absolute;
+  top: 240px;
+  display: none;
 }
 
 .max-error {
-  color: #dd1972;
-  /* display: none; */
-  margin: 0px;
   height: 20px;
+  /* display: none; */
+  margin: 0;
+  color: #dd1972;
 }
 
 .error-icon {
@@ -154,17 +156,17 @@ top: 240px;
 }
 
 .out-of-range-error {
-  color: #dd1972;
   display: flex;
   visibility: hidden;
+  color: #dd1972;
 }
 
 .out-of-range-error-p {
-  margin-left: 4px;
   margin-bottom: 0;
+  margin-left: 4px;
 }
 
-    /*error messages for range end */
+/*error messages for range end */
 
 .label-input-flex {
   display: flex;
@@ -187,11 +189,11 @@ top: 240px;
 }
 
 .left-box {
-  border: 1px solid #d1d2d4;
-  background-color: white;
   width: 93%;
   margin-top: 10px;
   padding: 10px;
+  border: 1px solid #d1d2d4;
+  background-color: white;
 }
 
 .latest-guess-left-box {
@@ -208,11 +210,11 @@ top: 240px;
 }
 
 .challenger-vertical-line {
-display: inline-block;
-  border: 1px solid #d1d2d4;
+  display: inline-block;
   height: calc(100%-10px);
   margin-top: 5px;
   margin-bottom: 5px;
+  border: 1px solid #d1d2d4;
 }
 
 .latest-guess-h2 {
@@ -222,18 +224,19 @@ display: inline-block;
 .challenger-2-name {
   margin-top: 36px;
 }
+
 /* Right Column Boxes */
 
 .outcome-hr {
-   width: 80%;
-   color: #d1d2d4;
+  width: 80%;
+  color: #d1d2d4;
 }
 
 .challenge-outcome {
-width: 80%;
-margin: 10px 10px 10px 70px;
-border: 2px solid #adadad;
-background-color: white;
+  width: 80%;
+  margin: 10px 10px 10px 70px;
+  border: 2px solid #adadad;
+  background-color: white;
 }
 
 .co-names {
@@ -243,14 +246,14 @@ background-color: white;
 }
 
 .vs {
-margin: 17px 10px 0px 15px;
-font-size: 18px;
+  font-size: 18px;
+  margin: 17px 10px 0 15px;
 }
 
 .mid-challenge-flex {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .challenge-line {
@@ -261,50 +264,57 @@ font-size: 18px;
 .outcome-bottom {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   margin-top: -10px;
+  justify-content: space-around;
 }
 
 .close-button {
-  border-radius: 50%;
-  background-color: #7F7F7F;
-  color: #CECFD1;
-  width: 25px;
-  height: 25px;
   position: relative;
   bottom: 2px;
+  width: 25px;
+  height: 25px;
+  color: #cecfd1;
+  border: 1px solid #7f7f7f;
+  border-radius: 50%;
+  background-color: #7f7f7f;
   background-image: url(assets/icons8-multiply-48.png);
-  background-size: 23px;
   background-repeat: no-repeat;
-  border: 1px solid #7F7F7F;
+  background-size: 23px;
+}
+
+.close-button:hover {
+  background-color: #dd1972;
+}
+
+.close-button:active {
+  transform: translateY(5px);
 }
 
 p.c-name {
-    font-size: 37px;
-    font-weight: bold;
-    margin: 10px 10px 0px 0px;
+  font-size: 37px;
+  font-weight: bold;
+  margin: 10px 10px 0 0;
 }
 
 .c-text {
-  color: #7F7F7F;
   margin-top: 19px;
+  color: #7f7f7f;
 }
 
 .winner {
   font-size: 37px;
-  margin: 5px 0px 0px 0px;
-
+  margin: 5px 0 0 0;
 }
 
 /* middle left box */
 
 .challenger-guess {
+  position: relative;
   display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
   width: 50%;
   height: 177px;
-  position: relative;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .buttons-flex {
@@ -313,16 +323,16 @@ p.c-name {
 }
 
 .submit-reset-clear-btns {
-  padding-left: 25px;
   padding-right: 25px;
+  padding-left: 25px;
 }
 
 .no-guesses1,
 .no-guesses2 {
   font-size: 20px;
   position: absolute;
-  margin: 0px;
   bottom: 2px;
+  margin: 0;
 }
 
 .set-range {
@@ -331,4 +341,12 @@ p.c-name {
 
 .enable-button {
   background-color: #6e6e6e;
+}
+
+.enable-button:hover {
+  background-color: #dd1972;
+}
+
+.enable-button:active {
+  transform: translateY(5px);
 }
