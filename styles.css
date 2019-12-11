@@ -279,6 +279,14 @@ font-size: 18px;
   border: 1px solid #7F7F7F;
 }
 
+.close-button:hover {
+  background-color: #dd1972;
+}
+
+.close-button:active {
+  transform: translateY(5px);
+}
+
 p.c-name {
     font-size: 37px;
     font-weight: bold;
@@ -331,4 +339,12 @@ p.c-name {
 
 .enable-button {
   background-color: #6e6e6e;
+}
+
+.enable-button:hover {
+  background-color: #dd1972;
+}
+
+.enable-button:active {
+  transform: translateY(5px);
 }
