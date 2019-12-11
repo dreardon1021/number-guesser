@@ -15,6 +15,7 @@ function engageSubmitListeners() {
   addC1Winner();
   addC2Winner();
   addChallengers();
+  resetGame();
   clearGuessInput();
 };
 
@@ -276,5 +277,17 @@ function enableUpdate() {
   } else if (rangeMinNum > rangeMaxNum){
     updateButton.setAttribute('disabled', "");
     updateButton.classList.remove('enable-button');
+  };
+};
+
+function resetGame() {
+  console.log("RESET");
+  console.log(currentNum);
+  if (user1GuessConversion() === currentNum) {
+    console.log("First if")
+    clearFormInput();
+  } else if (user2GuessConversion() === currentNum) {
+    console.log("Second if")
+    clearFormInput();
   };
 };
