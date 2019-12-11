@@ -218,7 +218,8 @@ function createCard() {
   var winnerCard = document.querySelector('.challenge-outcome');
   var rightColumn = document.querySelector('.column-right');
   if(user1GuessConversion() === currentNum || user2GuessConversion() === currentNum) {
-    rightColumn.innerHTML += `<article class="challenge-outcome">
+    rightColumn.insertAdjacentHTML('afterbegin',
+    `<article class="challenge-outcome">
     <div class="co-names">
       <h3 class="c-text c1-name">CHALLENGER 1 NAME</h3>
       <p class="vs">vs.</p>
@@ -235,7 +236,7 @@ function createCard() {
       <p class="c-text"> <strong>1</strong> Minute <strong>35</strong> Seconds</p>
       <button class="close-button"type="button" name="button"></button>
     </div>
-    </article>`
+    </article>`);
   };
 };
 
