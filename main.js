@@ -3,6 +3,14 @@ document.querySelector('.submit-form-button').addEventListener ('click', engageS
 document.querySelector('.challenger-form').addEventListener('keyup', enableButtons);
 document.querySelector('.update-button').addEventListener('click', updateRange);
 document.querySelector('.range-form').addEventListener('keyup', invokeUpdateHandler);
+document.querySelector('.column-right').addEventListener('click', closeCard);
+
+function closeCard(event) {
+  if(event.target.classList.contains('close-button')) {
+    event.target.parentNode.parentNode.remove();
+  };
+};
+
 
 //event handler functions
 function engageSubmitListeners() {
@@ -220,22 +228,22 @@ function createCard() {
   if(user1GuessConversion() === currentNum || user2GuessConversion() === currentNum) {
     rightColumn.insertAdjacentHTML('afterbegin',
     `<article class="challenge-outcome">
-    <div class="co-names">
-      <h3 class="c-text c1-name">CHALLENGER 1 NAME</h3>
-      <p class="vs">vs.</p>
-      <h3 class="c-text c2-name">CHALLENGER 2 NAME</h3>
-    </div>
-    <div class="mid-challenge-flex">
-      <hr class="challenge-line">
-      <p class="c-text c-name">CHALLENGER 2 NAME</p>
-      <p class="c-text winner">WINNER</p>
-      <hr class="challenge-line">
-    </div>
-    <div class="outcome-bottom">
-      <p class="c-text"><strong class="click-number">23</strong> Guesses</p>
-      <p class="c-text"> <strong>1</strong> Minute <strong>35</strong> Seconds</p>
-      <button class="close-button"type="button" name="button"></button>
-    </div>
+      <div class="co-names">
+        <h3 class="c-text c1-name">CHALLENGER 1 NAME</h3>
+        <p class="vs">vs.</p>
+        <h3 class="c-text c2-name">CHALLENGER 2 NAME</h3>
+      </div>
+      <div class="mid-challenge-flex">
+        <hr class="challenge-line">
+        <p class="c-text c-name">CHALLENGER 2 NAME</p>
+        <p class="c-text winner">WINNER</p>
+        <hr class="challenge-line">
+      </div>
+      <div class="outcome-bottom">
+        <p class="c-text"><strong class="click-number">23</strong> Guesses</p>
+        <p class="c-text"> <strong>1</strong> Minute <strong>35</strong> Seconds</p>
+        <button class="close-button"type="button" name="button"></button>
+      </div>
     </article>`);
   };
 };
