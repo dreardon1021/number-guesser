@@ -152,11 +152,9 @@ function printRange() {
 function showMinError() {
   var errorMessage = document.querySelector('.min-error-message');
   if(convertMin() > convertMax()) {
-    console.log('error')
     errorMessage.style.display = 'flex';
     minRangeInput.style.border = '2px solid #dd1972';
   } else if (convertMin() < convertMax()) {
-    console.log('no error')
     errorMessage.style.display = 'none';
     minRangeInput.style.border = '1px solid #d1d2d4'
   };
@@ -169,15 +167,12 @@ function user1GuessConversion() {
 };
 
 function user2GuessConversion() {
-
   var guess1Input = guessInput2Field.value;
   return parseInt(guess1Input, 10);
 };
 
 function passGuess1() {
   var guessMessage1 = document.querySelector('.no-guesses1');
-  var challenger1Name = document.querySelector('.c1-name');
-  var challenger2Name = document.querySelector('.c2-name');
     if(user1GuessConversion() > currentNum) {
       guessMessage1.innerText = 'That number is too high';
     } else if (user1GuessConversion() < currentNum) {
@@ -237,14 +232,13 @@ function addWinner() {
   var challenger1Name = document.querySelector('.c1-name');
   var challenger2Name = document.querySelector('.c2-name');
   var winnerName = document.querySelector('.c-name');
+  var clickNumber = document.querySelector('.click-number');
   var challenger1Value = nameInput1.value;
   var challenger2Value = nameInput2.value;
-  var clickNumber = document.querySelector('.click-number');
   if(user1GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger1Value;
-    console.log(count)
     clickNumber.innerText = count;
   } else if(user2GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
@@ -258,10 +252,13 @@ function showRangeErrorC1() {
 var rangeError = document.querySelector('.challenger-1-range-error');
   if (user1GuessConversion() < rangeMinNum){
     rangeError.style.visibility = 'visible';
+    guessInput1Field.style.border = '2px solid #dd1972';
   } else if (user1GuessConversion() > rangeMaxNum){
     rangeError.style.visibility = 'visible';
+    guessInput1Field.style.border = '2px solid #dd1972';
   } else {
     rangeError.style.visibility = 'hidden';
+    guessInput1Field.style.border = '1px solid #d1d2d4';
   };
 };
 
@@ -269,10 +266,13 @@ function showRangeErrorC2() {
 var rangeError = document.querySelector('.challenger-2-range-error');
   if (user2GuessConversion() < rangeMinNum){
     rangeError.style.visibility = 'visible';
+    guessInput2Field.style.border = '2px solid #dd1972';
   } else if (user2GuessConversion() > rangeMaxNum){
     rangeError.style.visibility = 'visible';
+    guessInput2Field.style.border = '2px solid #dd1972';
   } else {
     rangeError.style.visibility = 'hidden';
+    guessInput2Field.style.border = '1px solid #d1d2d4';
   };
 };
 
