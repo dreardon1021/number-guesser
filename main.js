@@ -5,14 +5,23 @@ document.querySelector('.update-button').addEventListener('click', updateRange);
 document.querySelector('.range-form').addEventListener('keyup', invokeUpdateHandler);
 document.querySelector('.column-right').addEventListener('click', closeCard);
 
-var submitButton = document.querySelector('.submit-form-button');
+var challengerName1 = document.querySelector('.challenger-1-name');
+var challengerName2 = document.querySelector('.challenger-2-name');
+var clearFormButton = document.querySelector('.clear-form-button');
 var count = 0;
-
-function closeCard(event) {
-  if(event.target.classList.contains('close-button')) {
-    event.target.parentNode.parentNode.remove();
-  };
-};
+var currentNum = Math.floor(Math.random() * 100 + 1);
+var gameForm = document.querySelector('.challenger-form');
+var guess1 = document.querySelector('.guess1');
+var guess2 = document.querySelector('.guess2');
+var guessInput1Field = document.querySelector('.guess-input1');
+var guessInput2Field = document.querySelector('.guess-input2');
+var maxRangeInput = document.querySelector('.max-range');
+var minRangeInput = document.querySelector('.min-range');
+var nameInput1 = document.querySelector('.name-input1');
+var nameInput2 = document.querySelector('.name-input2');
+var rangeMaxNum = 100;
+var rangeMinNum = 1;
+var submitButton = document.querySelector('.submit-form-button');
 
 
 //event handler functions
@@ -50,6 +59,12 @@ function updateRange() {
   printRange();
 };
 
+function closeCard(event) {
+  if(event.target.classList.contains('close-button')) {
+    event.target.parentNode.parentNode.remove();
+  };
+};
+
 
 // clears form funtion
 function clearFormInput() {
@@ -57,8 +72,6 @@ function clearFormInput() {
   for (var i=0; i < inputFields.length; i++) {
     inputFields[i].value = '';
   };
-  var submitButton = document.querySelector('.submit-form-button');
-  var clearFormButton = document.querySelector('.clear-form-button')
   submitButton.setAttribute('disabled', "");
   submitButton.classList.remove('enable-button');
   clearFormButton.setAttribute('disabled', "");
@@ -68,18 +81,10 @@ function clearFormInput() {
 
 // Adds challenger names and guesses into respected HTML elements
 function addChallengers(){
-  var nameInput1 = document.querySelector('.name-input1');
-  var nameInput2 = document.querySelector('.name-input2');
-  var guessInput1Field = document.querySelector('.guess-input1');
-  var guessInput2Field = document.querySelector('.guess-input2');
   var challenger1 = nameInput1.value;
   var challenger2 = nameInput2.value;
   var guess1Input = guessInput1Field.value;
   var guess2Input = guessInput2Field.value;
-  var challengerName1 = document.querySelector('.challenger-1-name');
-  var challengerName2 = document.querySelector('.challenger-2-name');
-  var guess1 = document.querySelector('.guess1');
-  var guess2 = document.querySelector('.guess2');
   challengerName1.innerText = challenger1;
   challengerName2.innerText = challenger2;
   guess1.innerText = guess1Input;
@@ -89,8 +94,6 @@ function addChallengers(){
 //Clear guess input on submit
 function clearGuessInput() {
   var guessInputFields = document.querySelectorAll('.guess-input-field');
-  var submitButton = document.querySelector('.submit-form-button');
-  var clearFormButton = document.querySelector('.clear-form-button');
   var resetButton = document.querySelector('.reset-game');
   for (var i=0; i < guessInputFields.length; i++){
     guessInputFields[i].value = '';
@@ -101,8 +104,6 @@ function clearGuessInput() {
 
 //enable sumbit buttons with form validiity
 function enableSubmit() {
-  var submitButton = document.querySelector('.submit-form-button');
-  var gameForm = document.querySelector('.challenger-form');
   if (gameForm.checkValidity() === true){
     submitButton.removeAttribute('disabled');
     submitButton.classList.add('enable-button');
@@ -114,8 +115,6 @@ function enableSubmit() {
 
 //enable clear buttons on form validiity
 function enableClearButton() {
-  var clearFormButton = document.querySelector('.clear-form-button');
-  var gameForm = document.querySelector('.challenger-form');
       if (gameForm.length > 0) {
       clearFormButton.removeAttribute('disabled');
       clearFormButton.classList.add('enable-button');
@@ -125,24 +124,14 @@ function enableClearButton() {
     };
   };
 
-//Generate Random number based on range and prints for user
-var currentNum = Math.floor(Math.random() * 100 + 1);
-var rangeMinNum = 1;
-var rangeMaxNum = 100;
-
-
 function convertMin() {
-  var rangeMinInputField = document.querySelector('.min-range');
-  var rangeMinInput = rangeMinInputField.value;
+  var rangeMinInput = minRangeInput.value;
   return rangeMinNum = parseInt(rangeMinInput, 10);
-  // console.log(rangeMinNum);
 };
 
 function convertMax() {
-  var rangeMaxInputField = document.querySelector('.max-range');
-  var rangeMaxInput = rangeMaxInputField.value;
+  var rangeMaxInput = maxRangeInput.value;
   return rangeMaxNum = parseInt(rangeMaxInput, 10);
-  // console.log(rangeMaxNum);
 };
 
 function changeRange() {
@@ -150,8 +139,6 @@ function changeRange() {
 };
 
 function printRange() {
-    var minRangeInput = document.querySelector('.min-range');
-    var maxRangeInput = document.querySelector('.max-range');
     var minValue = minRangeInput.value;
     var maxValue = maxRangeInput.value;
     var minElement = document.querySelector('.range-min');
@@ -163,15 +150,11 @@ function printRange() {
 
 //Range Error!
 function showMinError() {
-  var minRangeInput = document.querySelector('.min-range');
-  var maxRangeInput = document.querySelector('.max-range');
   var errorMessage = document.querySelector('.min-error-message');
   if(convertMin() > convertMax()) {
-    console.log('error')
     errorMessage.style.display = 'flex';
     minRangeInput.style.border = '2px solid #dd1972';
   } else if (convertMin() < convertMax()) {
-    console.log('no error')
     errorMessage.style.display = 'none';
     minRangeInput.style.border = '1px solid #d1d2d4'
   };
@@ -179,21 +162,17 @@ function showMinError() {
 
 // Guess messages print for users
 function user1GuessConversion() {
-  var guessInput1Field = document.querySelector('.guess-input1');
   var guess1Input = guessInput1Field.value;
   return parseInt(guess1Input, 10);
 };
 
 function user2GuessConversion() {
-  var guessInput2Field = document.querySelector('.guess-input2');
   var guess1Input = guessInput2Field.value;
   return parseInt(guess1Input, 10);
 };
 
 function passGuess1() {
   var guessMessage1 = document.querySelector('.no-guesses1');
-  var challenger1Name = document.querySelector('.c1-name');
-  var challenger2Name = document.querySelector('.c2-name');
     if(user1GuessConversion() > currentNum) {
       guessMessage1.innerText = 'That number is too high';
     } else if (user1GuessConversion() < currentNum) {
@@ -253,16 +232,13 @@ function addWinner() {
   var challenger1Name = document.querySelector('.c1-name');
   var challenger2Name = document.querySelector('.c2-name');
   var winnerName = document.querySelector('.c-name');
-  var nameInputOne = document.querySelector('.name-input1');
-  var nameInputTwo = document.querySelector('.name-input2');
-  var challenger1Value = nameInputOne.value;
-  var challenger2Value = nameInputTwo.value;
   var clickNumber = document.querySelector('.click-number');
+  var challenger1Value = nameInput1.value;
+  var challenger2Value = nameInput2.value;
   if(user1GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
     challenger2Name.innerText = challenger2Value;
     winnerName.innerText = challenger1Value;
-    console.log(count)
     clickNumber.innerText = count;
   } else if(user2GuessConversion() === currentNum) {
     challenger1Name.innerText = challenger1Value;
@@ -276,10 +252,13 @@ function showRangeErrorC1() {
 var rangeError = document.querySelector('.challenger-1-range-error');
   if (user1GuessConversion() < rangeMinNum){
     rangeError.style.visibility = 'visible';
+    guessInput1Field.style.border = '2px solid #dd1972';
   } else if (user1GuessConversion() > rangeMaxNum){
     rangeError.style.visibility = 'visible';
+    guessInput1Field.style.border = '2px solid #dd1972';
   } else {
     rangeError.style.visibility = 'hidden';
+    guessInput1Field.style.border = '1px solid #d1d2d4';
   };
 };
 
@@ -287,10 +266,13 @@ function showRangeErrorC2() {
 var rangeError = document.querySelector('.challenger-2-range-error');
   if (user2GuessConversion() < rangeMinNum){
     rangeError.style.visibility = 'visible';
+    guessInput2Field.style.border = '2px solid #dd1972';
   } else if (user2GuessConversion() > rangeMaxNum){
     rangeError.style.visibility = 'visible';
+    guessInput2Field.style.border = '2px solid #dd1972';
   } else {
     rangeError.style.visibility = 'hidden';
+    guessInput2Field.style.border = '1px solid #d1d2d4';
   };
 };
 
